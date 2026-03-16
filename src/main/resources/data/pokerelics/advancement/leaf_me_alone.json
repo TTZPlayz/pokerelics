@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "pokerelics:bulb_of_absorption"
+    },
+    "title": {
+      "translate": "advancements.leaf_me_alone.title"
+    },
+    "description": {
+      "translate": "advancements.leaf_me_alone.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "leaf_me_alone_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "pokerelics:i_choose_you"
+}

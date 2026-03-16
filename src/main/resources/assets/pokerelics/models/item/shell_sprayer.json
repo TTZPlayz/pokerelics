@@ -1,0 +1,68 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "pokerelics:item/shell_sprayer_full"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "pokerelics:shell_sprayer_fill_level": 0
+      },
+      "model": "pokerelics:item/shell_sprayer_0"
+    },
+    {
+      "predicate": {
+        "pokerelics:shell_sprayer_fill_level": 1
+      },
+      "model": "pokerelics:item/shell_sprayer_1"
+    },
+    {
+      "predicate": {
+        "pokerelics:shell_sprayer_fill_level": 2
+      },
+      "model": "pokerelics:item/shell_sprayer_2"
+    },
+    {
+      "predicate": {
+        "pokerelics:shell_sprayer_fill_level": 3
+      },
+      "model": "pokerelics:item/shell_sprayer_3"
+    },
+    {
+      "predicate": {
+        "pokerelics:shell_sprayer_fill_level": 4
+      },
+      "model": "pokerelics:item/shell_sprayer_4"
+    },
+    {
+      "predicate": {
+        "pokerelics:shell_sprayer_fill_level": 5
+      },
+      "model": "pokerelics:item/shell_sprayer_5"
+    },
+    {
+      "predicate": {
+        "pokerelics:shell_sprayer_fill_level": 6
+      },
+      "model": "pokerelics:item/shell_sprayer_6"
+    },
+    {
+      "predicate": {
+        "pokerelics:shell_sprayer_fill_level": 7
+      },
+      "model": "pokerelics:item/shell_sprayer_7"
+    },
+    {
+      "predicate": {
+        "pokerelics:shell_sprayer_fill_level": 8
+      },
+      "model": "pokerelics:item/shell_sprayer_8"
+    },
+    {
+      "predicate": {
+        "pokerelics:shell_sprayer_fill_level": 9
+      },
+      "model": "pokerelics:item/shell_sprayer_9"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "pokerelics:item/ancient_spoon"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "pokerelics:ancient_spoon_durability": 255
+      },
+      "model": "pokerelics:item/ancient_spoon_0"
+    },
+    {
+      "predicate": {
+        "pokerelics:ancient_spoon_active": 1
+      },
+      "model": "pokerelics:item/ancient_spoon_1"
+    }
+  ]
+}

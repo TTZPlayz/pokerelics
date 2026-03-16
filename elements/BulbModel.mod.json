@@ -1,0 +1,13 @@
+{
+  "_fv": 79,
+  "_type": "humanoidmodel",
+  "definition": {
+    "modelName": "BulbOfAbsorption",
+    "helmetModelPart": "Empty",
+    "bodyModelPart": "group",
+    "armsModelPartL": "Empty",
+    "armsModelPartR": "Empty",
+    "leggingsModelPartL": "Empty",
+    "leggingsModelPartR": "Empty"
+  }
+}

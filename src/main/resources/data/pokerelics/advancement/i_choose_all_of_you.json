@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "pokerelics:point_and_clik"
+    },
+    "title": {
+      "translate": "advancements.i_choose_all_of_you.title"
+    },
+    "description": {
+      "translate": "advancements.i_choose_all_of_you.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "i_choose_all_of_you_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "pokerelics:i_choose_you"
+}

@@ -1,0 +1,13 @@
+{
+  "_fv": 79,
+  "_type": "humanoidmodel",
+  "definition": {
+    "modelName": "SinisterGloveModel",
+    "helmetModelPart": "Empty",
+    "bodyModelPart": "Empty",
+    "armsModelPartL": "Empty",
+    "armsModelPartR": "bone",
+    "leggingsModelPartL": "Empty",
+    "leggingsModelPartR": "Empty"
+  }
+}

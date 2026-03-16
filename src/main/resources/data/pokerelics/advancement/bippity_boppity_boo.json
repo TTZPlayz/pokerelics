@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "pokerelics:ancient_spoon"
+    },
+    "title": {
+      "translate": "advancements.bippity_boppity_boo.title"
+    },
+    "description": {
+      "translate": "advancements.bippity_boppity_boo.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "bippity_boppity_boo_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "pokerelics:i_choose_you"
+}

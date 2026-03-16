@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "pokerelics:hypnotic_pendant"
+    },
+    "title": {
+      "translate": "advancements.a_fresh_start.title"
+    },
+    "description": {
+      "translate": "advancements.a_fresh_start.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "a_fresh_start_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "pokerelics:youre_getting_sleepy"
+}

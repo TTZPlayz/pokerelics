@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "pokerelics:item/shell_sprayer_filling_9"
+  }
+}

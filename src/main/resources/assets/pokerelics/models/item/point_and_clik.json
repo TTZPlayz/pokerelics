@@ -1,0 +1,20 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "pokerelics:item/point_and_clik_inactive"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "pokerelics:point_and_clik_activation": 1
+      },
+      "model": "pokerelics:item/point_and_clik_0"
+    },
+    {
+      "predicate": {
+        "pokerelics:point_and_clik_activation": 2
+      },
+      "model": "pokerelics:item/point_and_clik_1"
+    }
+  ]
+}

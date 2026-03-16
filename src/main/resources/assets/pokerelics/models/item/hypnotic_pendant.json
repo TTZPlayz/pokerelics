@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "pokerelics:item/hypnotic_pendant"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "pokerelics:hypnotic_pendant_active": 1
+      },
+      "model": "pokerelics:item/hypnotic_pendant_0"
+    }
+  ]
+}

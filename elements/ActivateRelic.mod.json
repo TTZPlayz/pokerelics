@@ -1,0 +1,12 @@
+{
+  "_fv": 79,
+  "_type": "keybind",
+  "definition": {
+    "triggerKey": "0",
+    "keyBindingName": "Activate Relic",
+    "keyBindingCategoryKey": "misc",
+    "onKeyPressed": {
+      "name": "ActivateRelicOnKeyPressed"
+    }
+  }
+}

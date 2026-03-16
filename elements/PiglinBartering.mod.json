@@ -1,0 +1,8 @@
+{
+  "_fv": 79,
+  "_type": "lootmodifier",
+  "definition": {
+    "modifiedTable": "gameplay/piglin_bartering",
+    "modifierTable": "AmuletLootTable"
+  }
+}

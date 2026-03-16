@@ -1,0 +1,2425 @@
+{
+  "mod_elements": [
+    {
+      "name": "Pokerelics",
+      "type": "tab",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pokerelics",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/Inventory"
+    },
+    {
+      "name": "AncientSpoon",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ancient_spoon",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/pokerelics/models/item/ancient_spoon.json",
+          "src/main/resources/assets/pokerelics/models/item/ancient_spoon_0.json",
+          "src/main/resources/assets/pokerelics/models/item/ancient_spoon_1.json",
+          "src/main/java/net/mcreator/pokerelics/item/AncientSpoonItem.java"
+        ]
+      },
+      "path": "~/Relics/AncientSpoon"
+    },
+    {
+      "name": "VigorCandle",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vigor_candle",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/item/VigorCandleItem.java",
+          "src/main/resources/assets/pokerelics/models/item/vigor_candle.json",
+          "src/main/resources/assets/pokerelics/models/item/vigor_candle_0.json"
+        ]
+      },
+      "path": "~/Relics/VigorCandle"
+    },
+    {
+      "name": "BulbOfAbsorption",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bulb_of_absorption",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/pokerelics/models/item/bulb_of_absorption.json",
+          "src/main/resources/assets/pokerelics/models/item/bulb_of_absorption_0.json",
+          "src/main/java/net/mcreator/pokerelics/item/BulbOfAbsorptionItem.java"
+        ]
+      },
+      "path": "~/Relics/BulbOfAbsorption"
+    },
+    {
+      "name": "InventoryMenu",
+      "type": "mixin",
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "inventory_menu",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/mixin/InventoryMenuMixin.java"
+        ]
+      },
+      "path": "~/Inventory"
+    },
+    {
+      "name": "BackSlotHotbarRenderer",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "back_slot_hotbar_renderer",
+      "metadata": {
+        "dependencies": [],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/BackSlotHotbarRendererProcedure.java"
+        ]
+      },
+      "path": "~/Rendering/Procedures"
+    },
+    {
+      "name": "DropBackSlotOnDeath",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "drop_back_slot_on_death",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/DropBackSlotOnDeathProcedure.java"
+        ]
+      },
+      "path": "~/Inventory"
+    },
+    {
+      "name": "AbsorbBulbEffect",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "absorb_bulb_effect",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/AbsorbBulbEffectProcedure.java"
+        ]
+      },
+      "path": "~/Relics/BulbOfAbsorption"
+    },
+    {
+      "name": "ActivateRelicOnKeyPressed",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "activate_relic_on_key_pressed",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/ActivateRelicOnKeyPressedProcedure.java"
+        ]
+      },
+      "path": "~/Inventory"
+    },
+    {
+      "name": "BulbOfAbsorptionPropertyValueProvider",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bulb_of_absorption_property_value_provider",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/BulbOfAbsorptionPropertyValueProviderProcedure.java"
+        ]
+      },
+      "path": "~/Relics/BulbOfAbsorption"
+    },
+    {
+      "name": "ActivateRelic",
+      "type": "keybind",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "activate_relic",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/network/ActivateRelicMessage.java"
+        ]
+      },
+      "path": "~/Inventory"
+    },
+    {
+      "name": "ActivateVigorCandle",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "activate_vigor_candle",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/ActivateVigorCandleProcedure.java"
+        ]
+      },
+      "path": "~/Relics/VigorCandle"
+    },
+    {
+      "name": "VigorCandlePropertyValueProvider",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "vigor_candle_property_value_provider",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/VigorCandlePropertyValueProviderProcedure.java"
+        ]
+      },
+      "path": "~/Relics/VigorCandle"
+    },
+    {
+      "name": "JungleTemple",
+      "type": "lootmodifier",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "jungle_temple",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/loot_modifiers/jungle_temple.json"
+        ]
+      },
+      "path": "~/LootTableModifiers"
+    },
+    {
+      "name": "BulbLootTable",
+      "type": "loottable",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bulb_loot_table",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/loot_table/chests/bulb_of_absorption.json"
+        ]
+      },
+      "path": "~/LootTableModifiers"
+    },
+    {
+      "name": "RelicSpecialInformation",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "relic_special_information",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "tooltip",
+            "type": "tooltip"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/RelicSpecialInformationProcedure.java"
+        ]
+      },
+      "path": "~/Rendering/Procedures"
+    },
+    {
+      "name": "CandleLootTable",
+      "type": "loottable",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "candle_loot_table",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/loot_table/candle_loot_table.json"
+        ]
+      },
+      "path": "~/LootTableModifiers"
+    },
+    {
+      "name": "NetherFortress",
+      "type": "lootmodifier",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "nether_fortress",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/loot_modifiers/nether_fortress.json"
+        ]
+      },
+      "path": "~/LootTableModifiers"
+    },
+    {
+      "name": "OceanRuins",
+      "type": "lootmodifier",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ocean_ruins",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/loot_modifiers/ocean_ruins.json"
+        ]
+      },
+      "path": "~/LootTableModifiers"
+    },
+    {
+      "name": "SprayerLootTable",
+      "type": "loottable",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sprayer_loot_table",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/loot_table/sprayer_loot_table.json"
+        ]
+      },
+      "path": "~/LootTableModifiers"
+    },
+    {
+      "name": "ShellSprayerPropertyValueProvider",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shell_sprayer_property_value_provider",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/ShellSprayerPropertyValueProviderProcedure.java"
+        ]
+      },
+      "path": "~/Relics/ShellSprayer"
+    },
+    {
+      "name": "ShellSprayer",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shell_sprayer",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/pokerelics/models/item/shell_sprayer_6.json",
+          "src/main/resources/assets/pokerelics/models/item/shell_sprayer_0.json",
+          "src/main/resources/assets/pokerelics/models/item/shell_sprayer_3.json",
+          "src/main/resources/assets/pokerelics/models/item/shell_sprayer_7.json",
+          "src/main/resources/assets/pokerelics/models/item/shell_sprayer.json",
+          "src/main/resources/assets/pokerelics/models/item/shell_sprayer_8.json",
+          "src/main/resources/assets/pokerelics/models/item/shell_sprayer_2.json",
+          "src/main/resources/assets/pokerelics/models/item/shell_sprayer_4.json",
+          "src/main/java/net/mcreator/pokerelics/item/ShellSprayerItem.java",
+          "src/main/resources/assets/pokerelics/models/item/shell_sprayer_1.json",
+          "src/main/resources/assets/pokerelics/models/item/shell_sprayer_5.json",
+          "src/main/resources/assets/pokerelics/models/item/shell_sprayer_9.json"
+        ]
+      },
+      "path": "~/Relics/ShellSprayer"
+    },
+    {
+      "name": "ShellSprayerEffect",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shell_sprayer_effect",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/ShellSprayerEffectProcedure.java"
+        ]
+      },
+      "path": "~/Relics/ShellSprayer"
+    },
+    {
+      "name": "ShellSprayerTimer",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shell_sprayer_timer",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/ShellSprayerTimerProcedure.java"
+        ]
+      },
+      "path": "~/Relics/ShellSprayer"
+    },
+    {
+      "name": "AncientSpoonPropertyValueProvider",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ancient_spoon_property_value_provider",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/AncientSpoonPropertyValueProviderProcedure.java"
+        ]
+      },
+      "path": "~/Relics/AncientSpoon"
+    },
+    {
+      "name": "TelekinesisActiveTickCondition",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "telekinesis_active_tick_condition",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/TelekinesisActiveTickConditionProcedure.java"
+        ]
+      },
+      "path": "~/Effects/Telekinesis"
+    },
+    {
+      "name": "Telekinesis",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "telekinesis",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/potion/TelekinesisMobEffect.java"
+        ]
+      },
+      "path": "~/Effects/Telekinesis"
+    },
+    {
+      "name": "AncientSpoonEffect",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ancient_spoon_effect",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/AncientSpoonEffectProcedure.java"
+        ]
+      },
+      "path": "~/Relics/AncientSpoon"
+    },
+    {
+      "name": "AncientSpoonActivate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ancient_spoon_activate",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/AncientSpoonActivateProcedure.java"
+        ]
+      },
+      "path": "~/Relics/AncientSpoon"
+    },
+    {
+      "name": "SpoonCheck",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spoon_check",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/SpoonCheckProcedure.java"
+        ]
+      },
+      "path": "~/Relics/AncientSpoon"
+    },
+    {
+      "name": "TelekinesisParticle",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "telekinesis_particle",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/pokerelics/particles/telekinesis_particle.json",
+          "src/main/java/net/mcreator/pokerelics/client/particle/TelekinesisParticleParticle.java"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "TelekinesisParticle2",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "telekinesis_particle_2",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/pokerelics/particles/telekinesis_particle_2.json",
+          "src/main/java/net/mcreator/pokerelics/client/particle/TelekinesisParticle2Particle.java"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "TelekinesisParticle3",
+      "type": "particle",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "telekinesis_particle_3",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/pokerelics/particles/telekinesis_particle_3.json",
+          "src/main/java/net/mcreator/pokerelics/client/particle/TelekinesisParticle3Particle.java"
+        ]
+      },
+      "path": "~/Particles"
+    },
+    {
+      "name": "AncientCity",
+      "type": "lootmodifier",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ancient_city",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/loot_modifiers/ancient_city.json"
+        ]
+      },
+      "path": "~/LootTableModifiers"
+    },
+    {
+      "name": "SpoonLootTable",
+      "type": "loottable",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spoon_loot_table",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/loot_table/spoon_loot_table.json"
+        ]
+      },
+      "path": "~/LootTableModifiers"
+    },
+    {
+      "name": "SteelPlating",
+      "type": "block",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "steel_plating",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/pokerelics/blockstates/steel_plating.json",
+          "src/main/resources/assets/pokerelics/models/block/steel_plating.json",
+          "src/main/resources/assets/pokerelics/models/item/steel_plating.json",
+          "src/main/resources/data/pokerelics/loot_table/blocks/steel_plating.json",
+          "src/main/java/net/mcreator/pokerelics/block/SteelPlatingBlock.java"
+        ]
+      },
+      "path": "~/Poryware/Blocks"
+    },
+    {
+      "name": "Magnedrone",
+      "type": "livingentity",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magnedrone",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/entity/MagnedroneEntity.java",
+          "src/main/resources/assets/pokerelics/models/item/magnedrone_spawn_egg.json",
+          "src/main/java/net/mcreator/pokerelics/client/renderer/MagnedroneRenderer.java"
+        ]
+      },
+      "path": "~/Poryware/Magnedrone"
+    },
+    {
+      "name": "MagnedroneNaturalEntitySpawningCondition",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magnedrone_natural_entity_spawning_condition",
+      "metadata": {
+        "dependencies": [],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/MagnedroneNaturalEntitySpawningConditionProcedure.java"
+        ]
+      },
+      "path": "~/Poryware/Magnedrone"
+    },
+    {
+      "name": "MechanicalScrap",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "mechanical_scrap",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/item/MechanicalScrapItem.java",
+          "src/main/resources/assets/pokerelics/models/item/mechanical_scrap.json"
+        ]
+      },
+      "path": "~/Poryware/Magnedrone"
+    },
+    {
+      "name": "MagnedroneLootTable",
+      "type": "loottable",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magnedrone_loot_table",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/loot_table/entities/magnedrone.json"
+        ]
+      },
+      "path": "~/Poryware/Magnedrone"
+    },
+    {
+      "name": "RepairRelic",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "repair_relic",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/RepairRelicProcedure.java"
+        ]
+      },
+      "path": "~/Inventory"
+    },
+    {
+      "name": "RelicEasyEquip",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "relic_easy_equip",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/RelicEasyEquipProcedure.java"
+        ]
+      },
+      "path": "~/Inventory"
+    },
+    {
+      "name": "MagnedroneOnEntityTickUpdate",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magnedrone_on_entity_tick_update",
+      "metadata": {
+        "dependencies": [],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/MagnedroneOnEntityTickUpdateProcedure.java"
+        ]
+      },
+      "path": "~/Poryware/Magnedrone"
+    },
+    {
+      "name": "MagnedroneAngryTextureSwap",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "magnedrone_angry_texture_swap",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/MagnedroneAngryTextureSwapProcedure.java"
+        ]
+      },
+      "path": "~/Poryware/Magnedrone"
+    },
+    {
+      "name": "AncientSpoonPropertyValueProviderActive",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "ancient_spoon_property_value_provider_active",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/AncientSpoonPropertyValueProviderActiveProcedure.java"
+        ],
+        "return_type": "number"
+      },
+      "path": "~/Relics/AncientSpoon"
+    },
+    {
+      "name": "BulbModel",
+      "type": "humanoidmodel",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bulb_model",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/Rendering/Models"
+    },
+    {
+      "name": "TextureInit",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "texture_init",
+      "metadata": {
+        "dependencies": [],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/TextureInitProcedure.java"
+        ]
+      },
+      "path": "~/Rendering/Procedures"
+    },
+    {
+      "name": "PointAndClikPropertyValueProvider",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "point_and_clik_property_value_provider",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/PointAndClikPropertyValueProviderProcedure.java"
+        ]
+      },
+      "path": "~/Poryware/PointAndClik"
+    },
+    {
+      "name": "PointAndClikRightclickedOnBlock",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "point_and_clik_rightclicked_on_block",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/PointAndClikRightclickedOnBlockProcedure.java"
+        ]
+      },
+      "path": "~/Poryware/PointAndClik"
+    },
+    {
+      "name": "PointAndClik",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "point_and_clik",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/pokerelics/models/item/point_and_clik_0.json",
+          "src/main/java/net/mcreator/pokerelics/item/PointAndClikItem.java",
+          "src/main/resources/assets/pokerelics/models/item/point_and_clik.json",
+          "src/main/resources/assets/pokerelics/models/item/point_and_clik_1.json"
+        ]
+      },
+      "path": "~/Poryware/PointAndClik"
+    },
+    {
+      "name": "RenderBackSlotNew",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "render_back_slot_new",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "playerRenderEvent",
+            "type": "playerrendering"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/RenderBackSlotNewProcedure.java"
+        ]
+      },
+      "path": "~/Rendering/Procedures"
+    },
+    {
+      "name": "CandleModel",
+      "type": "humanoidmodel",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "candle_model",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/Rendering/Models"
+    },
+    {
+      "name": "SprayerModel",
+      "type": "humanoidmodel",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sprayer_model",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/Rendering/Models"
+    },
+    {
+      "name": "TextureTimer",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "texture_timer",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/TextureTimerProcedure.java"
+        ]
+      },
+      "path": "~/Rendering/Procedures"
+    },
+    {
+      "name": "SinisterGlovePropertyValueProviderActive",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sinister_glove_property_value_provider_active",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/SinisterGlovePropertyValueProviderActiveProcedure.java"
+        ]
+      },
+      "path": "~/Relics/SinisterGlove"
+    },
+    {
+      "name": "SinisterGlove",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sinister_glove",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/pokerelics/models/item/sinister_glove_0.json",
+          "src/main/resources/assets/pokerelics/models/item/sinister_glove.json",
+          "src/main/java/net/mcreator/pokerelics/item/SinisterGloveItem.java"
+        ]
+      },
+      "path": "~/Relics/SinisterGlove"
+    },
+    {
+      "name": "ActivateSinisterGlove",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "activate_sinister_glove",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/ActivateSinisterGloveProcedure.java"
+        ]
+      },
+      "path": "~/Relics/SinisterGlove"
+    },
+    {
+      "name": "Terror",
+      "type": "potioneffect",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "terror",
+      "metadata": {
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/potion/TerrorMobEffect.java"
+        ]
+      },
+      "path": "~/Effects/Terror"
+    },
+    {
+      "name": "TerrorOnEffectActiveTick",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "terror_on_effect_active_tick",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/TerrorOnEffectActiveTickProcedure.java"
+        ]
+      },
+      "path": "~/Effects/Terror"
+    },
+    {
+      "name": "TerrorOnEffectActiveTickMovement",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "terror_on_effect_active_tick_movement",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/TerrorOnEffectActiveTickMovementProcedure.java"
+        ]
+      },
+      "path": "~/Effects/Terror"
+    },
+    {
+      "name": "RelicTimers",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "relic_timers",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/RelicTimersProcedure.java"
+        ]
+      },
+      "path": "~/Rendering/Procedures"
+    },
+    {
+      "name": "WoodlandMansion",
+      "type": "lootmodifier",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "woodland_mansion",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/loot_modifiers/woodland_mansion.json"
+        ]
+      },
+      "path": "~/LootTableModifiers"
+    },
+    {
+      "name": "GloveLootTable",
+      "type": "loottable",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "glove_loot_table",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/loot_table/glove_loot_table.json"
+        ]
+      },
+      "path": "~/LootTableModifiers"
+    },
+    {
+      "name": "HypnoticPendantPropertyValueProviderActive",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hypnotic_pendant_property_value_provider_active",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "return_type": "number",
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/HypnoticPendantPropertyValueProviderActiveProcedure.java"
+        ]
+      },
+      "path": "~/Relics/HypnoticPendant"
+    },
+    {
+      "name": "HypnoticPendant",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hypnotic_pendant",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/pokerelics/models/item/hypnotic_pendant.json",
+          "src/main/resources/assets/pokerelics/models/item/hypnotic_pendant_0.json",
+          "src/main/java/net/mcreator/pokerelics/item/HypnoticPendantItem.java"
+        ]
+      },
+      "path": "~/Relics/HypnoticPendant"
+    },
+    {
+      "name": "HypnoticPendantRightclicked",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "hypnotic_pendant_rightclicked",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/HypnoticPendantRightclickedProcedure.java"
+        ]
+      },
+      "path": "~/Relics/HypnoticPendant"
+    },
+    {
+      "name": "RegalAmulet",
+      "type": "item",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "regal_amulet",
+      "metadata": {
+        "files": [
+          "src/main/resources/assets/pokerelics/models/item/regal_amulet.json",
+          "src/main/java/net/mcreator/pokerelics/item/RegalAmuletItem.java"
+        ]
+      },
+      "path": "~/Relics/RegalAmulet"
+    },
+    {
+      "name": "ActivateRegalAmulet",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "activate_regal_amulet",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/ActivateRegalAmuletProcedure.java"
+        ]
+      },
+      "path": "~/Relics/RegalAmulet"
+    },
+    {
+      "name": "GloveModel",
+      "type": "humanoidmodel",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "glove_model",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/Rendering/Models"
+    },
+    {
+      "name": "AmuletModel",
+      "type": "humanoidmodel",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "amulet_model",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/Rendering/Models"
+    },
+    {
+      "name": "PiglinBartering",
+      "type": "lootmodifier",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "piglin_bartering",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/loot_modifiers/piglin_bartering.json"
+        ]
+      },
+      "path": "~/LootTableModifiers"
+    },
+    {
+      "name": "AmuletLootTable",
+      "type": "loottable",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "amulet_loot_table",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/loot_table/amulet_loot_table.json"
+        ]
+      },
+      "path": "~/LootTableModifiers"
+    },
+    {
+      "name": "PendantTrade",
+      "type": "villagertrade",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pendant_trade",
+      "metadata": {
+        "files": []
+      },
+      "path": "~/LootTableModifiers"
+    },
+    {
+      "name": "TelekinesisEffectExpires",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "telekinesis_effect_expires",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/TelekinesisEffectExpiresProcedure.java"
+        ]
+      },
+      "path": "~/Effects/Telekinesis"
+    },
+    {
+      "name": "TelekinesisEffectStartedapplied",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "telekinesis_effect_startedapplied",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/TelekinesisEffectStartedappliedProcedure.java"
+        ]
+      },
+      "path": "~/Effects/Telekinesis"
+    },
+    {
+      "name": "WelcomeToPokerelics",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "welcome_to_pokerelics",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/advancement/welcome_to_pokerelics.json"
+        ]
+      },
+      "path": "~/Achievements"
+    },
+    {
+      "name": "BippityBoppityBoo",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "bippity_boppity_boo",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/advancement/bippity_boppity_boo.json"
+        ]
+      },
+      "path": "~/Achievements"
+    },
+    {
+      "name": "SithLord",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sith_lord",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/advancement/sith_lord.json"
+        ]
+      },
+      "path": "~/Achievements/SecretChallenges"
+    },
+    {
+      "name": "IChooseYou",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "i_choose_you",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/advancement/i_choose_you.json"
+        ]
+      },
+      "path": "~/Achievements"
+    },
+    {
+      "name": "RelicAdvancementTrigger",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "relic_advancement_trigger",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/RelicAdvancementTriggerProcedure.java"
+        ]
+      },
+      "path": "~/Achievements"
+    },
+    {
+      "name": "PlayingWithFire",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "playing_with_fire",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/advancement/playing_with_fire.json"
+        ]
+      },
+      "path": "~/Achievements"
+    },
+    {
+      "name": "Pyromaniac",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pyromaniac",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/advancement/pyromaniac.json"
+        ]
+      },
+      "path": "~/Achievements/SecretChallenges"
+    },
+    {
+      "name": "IChooseAllOfYou",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "i_choose_all_of_you",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/advancement/i_choose_all_of_you.json"
+        ]
+      },
+      "path": "~/Achievements"
+    },
+    {
+      "name": "ShellShocked",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "shell_shocked",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/advancement/shell_shocked.json"
+        ]
+      },
+      "path": "~/Achievements"
+    },
+    {
+      "name": "LeafMeAlone",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "leaf_me_alone",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/advancement/leaf_me_alone.json"
+        ]
+      },
+      "path": "~/Achievements"
+    },
+    {
+      "name": "Spooky",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "spooky",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/advancement/spooky.json"
+        ]
+      },
+      "path": "~/Achievements"
+    },
+    {
+      "name": "PrepareForTrouble",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "prepare_for_trouble",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/advancement/prepare_for_trouble.json"
+        ]
+      },
+      "path": "~/Achievements"
+    },
+    {
+      "name": "YoureGettingSleepy",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "youre_getting_sleepy",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/advancement/youre_getting_sleepy.json"
+        ]
+      },
+      "path": "~/Achievements"
+    },
+    {
+      "name": "DunDunDunDunDun",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "dun_dun_dun_dun_dun",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/advancement/dun_dun_dun_dun_dun.json"
+        ]
+      },
+      "path": "~/Achievements"
+    },
+    {
+      "name": "PokemonMaster",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "pokemon_master",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/advancement/pokemon_master.json"
+        ]
+      },
+      "path": "~/Achievements/SecretChallenges"
+    },
+    {
+      "name": "BEGONE",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "begone",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/advancement/begone.json"
+        ]
+      },
+      "path": "~/Achievements/SecretChallenges"
+    },
+    {
+      "name": "ChlorophyllChampion",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "chlorophyll_champion",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/advancement/chlorophyll_champion.json"
+        ]
+      },
+      "path": "~/Achievements/SecretChallenges"
+    },
+    {
+      "name": "ScaredTheDevilHimself",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "scared_the_devil_himself",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/advancement/scared_the_devil_himself.json"
+        ]
+      },
+      "path": "~/Achievements/SecretChallenges"
+    },
+    {
+      "name": "AndWhenYouHitTheJackpot",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "and_when_you_hit_the_jackpot",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/advancement/and_when_you_hit_the_jackpot.json"
+        ]
+      },
+      "path": "~/Achievements/SecretChallenges"
+    },
+    {
+      "name": "AFreshStart",
+      "type": "achievement",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "a_fresh_start",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/advancement/a_fresh_start.json"
+        ]
+      },
+      "path": "~/Achievements/SecretChallenges"
+    },
+    {
+      "name": "SplashDamage",
+      "type": "damagetype",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "splash_damage",
+      "metadata": {
+        "files": [
+          "src/main/resources/data/pokerelics/damage_type/splash_damage.json"
+        ]
+      },
+      "path": "~/Relics/ShellSprayer"
+    },
+    {
+      "name": "SplashDeathTrigger",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "splash_death_trigger",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "damagesource",
+            "type": "damagesource"
+          },
+          {
+            "name": "sourceentity",
+            "type": "entity"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/SplashDeathTriggerProcedure.java"
+        ]
+      },
+      "path": "~/Relics/ShellSprayer"
+    },
+    {
+      "name": "EndChlorophyllStreak",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "end_chlorophyll_streak",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "itemstack",
+            "type": "itemstack"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/EndChlorophyllStreakProcedure.java"
+        ]
+      },
+      "path": "~/Relics/BulbOfAbsorption"
+    },
+    {
+      "name": "SithLordDeathTrigger",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "sith_lord_death_trigger",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "x",
+            "type": "number"
+          },
+          {
+            "name": "y",
+            "type": "number"
+          },
+          {
+            "name": "z",
+            "type": "number"
+          },
+          {
+            "name": "world",
+            "type": "world"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/SithLordDeathTriggerProcedure.java"
+        ]
+      },
+      "path": "~/Relics/AncientSpoon"
+    },
+    {
+      "name": "AFreshStartTrigger",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "a_fresh_start_trigger",
+      "metadata": {
+        "dependencies": [],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/AFreshStartTriggerProcedure.java"
+        ]
+      },
+      "path": "~/Relics/HypnoticPendant"
+    },
+    {
+      "name": "ArmSlotRender",
+      "type": "procedure",
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "arm_slot_render",
+      "metadata": {
+        "dependencies": [
+          {
+            "name": "armRenderEvent",
+            "type": "armrendering"
+          },
+          {
+            "name": "entity",
+            "type": "entity"
+          },
+          {
+            "name": "entityModel",
+            "type": "model"
+          },
+          {
+            "name": "poseStack",
+            "type": "posestack"
+          }
+        ],
+        "files": [
+          "src/main/java/net/mcreator/pokerelics/procedures/ArmSlotRenderProcedure.java"
+        ]
+      },
+      "path": "~/Rendering/Procedures"
+    }
+  ],
+  "variable_elements": [
+    {
+      "name": "backSlot",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "heal_counter",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "marked_by_spoon",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "is_relic_active",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "candle_activation_timer",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "time_since_heal",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "lastBackSlot",
+      "type": "itemstack",
+      "scope": "player_persistent",
+      "value": "ItemStack.EMPTY"
+    },
+    {
+      "name": "spoon_time",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "spoon_ticks_used",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    },
+    {
+      "name": "fill_level",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "time_since_spray",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "spoon_active",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "bulb_texture",
+      "type": "texturelocation",
+      "scope": "global",
+      "value": "null"
+    },
+    {
+      "name": "candle_texture_unlit",
+      "type": "texturelocation",
+      "scope": "global",
+      "value": "null"
+    },
+    {
+      "name": "candle_texture_lit",
+      "type": "texturelocation",
+      "scope": "global",
+      "value": "null"
+    },
+    {
+      "name": "point_and_clik_cooldown",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "sprayer_full_1",
+      "type": "texturelocation",
+      "scope": "global",
+      "value": "null"
+    },
+    {
+      "name": "sprayer_full_2",
+      "type": "texturelocation",
+      "scope": "global",
+      "value": "null"
+    },
+    {
+      "name": "sprayer_full_3",
+      "type": "texturelocation",
+      "scope": "global",
+      "value": "null"
+    },
+    {
+      "name": "sprayer_full_4",
+      "type": "texturelocation",
+      "scope": "global",
+      "value": "null"
+    },
+    {
+      "name": "sprayer_full_5",
+      "type": "texturelocation",
+      "scope": "global",
+      "value": "null"
+    },
+    {
+      "name": "sprayer_full_6",
+      "type": "texturelocation",
+      "scope": "global",
+      "value": "null"
+    },
+    {
+      "name": "sprayer_full_7",
+      "type": "texturelocation",
+      "scope": "global",
+      "value": "null"
+    },
+    {
+      "name": "sprayer_full_8",
+      "type": "texturelocation",
+      "scope": "global",
+      "value": "null"
+    },
+    {
+      "name": "sprayer_full_9",
+      "type": "texturelocation",
+      "scope": "global",
+      "value": "null"
+    },
+    {
+      "name": "sprayer_full_10",
+      "type": "texturelocation",
+      "scope": "global",
+      "value": "null"
+    },
+    {
+      "name": "sprayer_full_11",
+      "type": "texturelocation",
+      "scope": "global",
+      "value": "null"
+    },
+    {
+      "name": "sprayer_full_12",
+      "type": "texturelocation",
+      "scope": "global",
+      "value": "null"
+    },
+    {
+      "name": "sprayer_full_13",
+      "type": "texturelocation",
+      "scope": "global",
+      "value": "null"
+    },
+    {
+      "name": "sprayer_full_14",
+      "type": "texturelocation",
+      "scope": "global",
+      "value": "null"
+    },
+    {
+      "name": "texture_timer",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "glove_active",
+      "type": "logic",
+      "scope": "player_lifetime",
+      "value": "false"
+    },
+    {
+      "name": "glove_activation_cooldown",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "amulet_activation_cooldown",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "regal_amulet",
+      "type": "texturelocation",
+      "scope": "global",
+      "value": "null"
+    },
+    {
+      "name": "sinister_glove",
+      "type": "texturelocation",
+      "scope": "global",
+      "value": "null"
+    },
+    {
+      "name": "has_candle",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "has_bulb",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "has_sprayer",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "has_spoon",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "has_glove",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "has_amulet",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "has_pendant",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "has_repaired_relic",
+      "type": "logic",
+      "scope": "player_persistent",
+      "value": "false"
+    },
+    {
+      "name": "firestreak_counter",
+      "type": "number",
+      "scope": "player_lifetime",
+      "value": "0"
+    },
+    {
+      "name": "chlorophyll_streak",
+      "type": "number",
+      "scope": "player_persistent",
+      "value": "0"
+    }
+  ],
+  "sound_elements": [],
+  "tag_elements": {
+    "ITEMS:minecraft:enchantable/durability": [
+      "~CUSTOM:RegalAmulet",
+      "~CUSTOM:HypnoticPendant",
+      "~CUSTOM:SinisterGlove",
+      "~CUSTOM:ShellSprayer",
+      "~CUSTOM:BulbOfAbsorption",
+      "~CUSTOM:VigorCandle",
+      "~CUSTOM:AncientSpoon"
+    ],
+    "ITEMS:mod:relics": [
+      "CUSTOM:VigorCandle",
+      "CUSTOM:AncientSpoon",
+      "CUSTOM:BulbOfAbsorption",
+      "CUSTOM:ShellSprayer",
+      "CUSTOM:SinisterGlove",
+      "CUSTOM:HypnoticPendant",
+      "CUSTOM:RegalAmulet"
+    ],
+    "ITEMS:mod:active_relics": [
+      "CUSTOM:AncientSpoon",
+      "CUSTOM:HypnoticPendant"
+    ],
+    "BLOCKS:minecraft:mineable/pickaxe": [
+      "~CUSTOM:SteelPlating"
+    ],
+    "BLOCKS:minecraft:needs_stone_tool": [
+      "~CUSTOM:SteelPlating"
+    ],
+    "ITEMS:mod:relic_repair_materials": [
+      "Blocks.SPORE_BLOSSOM",
+      "Items.MAGMA_CREAM",
+      "Items.SCUTE",
+      "CUSTOM:MechanicalScrap",
+      "Items.EXPERIENCE_BOTTLE",
+      "Items.PHANTOM_MEMBRANE",
+      "Items.GOLD_NUGGET",
+      "Items.IRON_NUGGET"
+    ]
+  },
+  "tab_element_order": {},
+  "language_map": {
+    "en_us": {
+      "item_group.pokerelics.pokerelics": "Pokerelics",
+      "item.pokerelics.ancient_spoon": "Ancient Spoon",
+      "item.pokerelics.ancient_spoon.description_0": "Hold Right-Click in the direction of an entity to make it levitate.",
+      "item.pokerelics.vigor_candle": "Vigor Candle",
+      "item.pokerelics.vigor_candle.description_0": "When equipped, gives a 25% chance to infuse your hits with Fire Aspect, and will give Flame to 50% of bow shots.",
+      "item.pokerelics.bulb_of_absorption": "Bulb Of Absorption",
+      "item.pokerelics.bulb_of_absorption.description_0": "Hold [Shift] to see description",
+      "key.pokerelics.activate_relic": "Activate Relic",
+      "item.pokerelics.shell_sprayer": "Shell Sprayer",
+      "effect.pokerelics.telekinesis": "Telekinesis",
+      "block.pokerelics.steel_plating": "Steel Plating",
+      "entity.pokerelics.magnedrone": "Magnedrone",
+      "item.pokerelics.magnedrone_spawn_egg": "Magnedrone Spawn Egg",
+      "item.pokerelics.mechanical_scrap": "Mechanical Scrap",
+      "item.pokerelics.point_and_clik": "Point-and-Clik",
+      "item.pokerelics.sinister_glove": "Sinister Glove",
+      "effect.pokerelics.terror": "Terror",
+      "item.pokerelics.hypnotic_pendant": "Hypnotic Pendant",
+      "item.pokerelics.regal_amulet": "Regal Amulet",
+      "advancements.welcome_to_pokerelics.descr": "Welcome to Pokerelics! Discover unique Relics throughout your world. Let the journey begin!",
+      "advancements.welcome_to_pokerelics.title": "A World We Must Defend",
+      "advancements.bippity_boppity_boo.title": "Bippity Boppity Boo",
+      "advancements.bippity_boppity_boo.descr": "Obtain the Ancient Spoon.",
+      "advancements.sith_lord.descr": "Kill a villager using the Ancient Spoon. You\u0027re sick!",
+      "advancements.sith_lord.title": "Sith Lord",
+      "advancements.i_choose_you.title": "I Choose You!",
+      "advancements.i_choose_you.descr": "Obtain your first relic.",
+      "advancements.playing_with_fire.descr": "Obtain the Vigor Candle.",
+      "advancements.playing_with_fire.title": "Playing With Fire",
+      "advancements.pyromaniac.descr": "Ignite 10 mobs with one Firestreak from the Vigor Candle.",
+      "advancements.pyromaniac.title": "Pyromaniac",
+      "advancements.i_choose_all_of_you.title": "I Choose...all of you!",
+      "advancements.i_choose_all_of_you.descr": "Obtain all starter-tier relics.",
+      "advancements.shell_shocked.title": "Shell-Shocked",
+      "advancements.shell_shocked.descr": "Obtain the Shell Sprayer.",
+      "advancements.leaf_me_alone.descr": "Obtain the Bulb of Absorption.",
+      "advancements.leaf_me_alone.title": "Leaf Me Alone",
+      "advancements.spooky.title": "Spooky!",
+      "advancements.spooky.descr": "Obtain the Sinister Glove.",
+      "advancements.prepare_for_trouble.descr": "Obtain the Regal Amulet.",
+      "advancements.prepare_for_trouble.title": "Prepare For Trouble",
+      "advancements.youre_getting_sleepy.descr": "Obtain the Hypnotic Pendant.",
+      "advancements.youre_getting_sleepy.title": "You\u0027re Getting Sleepy...",
+      "advancements.dun_dun_dun_dun_dun.title": "Dun, dun, dun-dun-dun!",
+      "advancements.dun_dun_dun_dun_dun.descr": "Repair a Relic by Shift-Right-Clicking with a Repair Material in your offhand.",
+      "advancements.pokemon_master.title": "Pokémon Master",
+      "advancements.pokemon_master.descr": "Obtain all currently available relics in Pokerelics.",
+      "advancements.begone.title": "BEGONE!",
+      "advancements.begone.descr": "Splash a mob to death with the Shell Sprayer.",
+      "advancements.chlorophyll_champion.descr": "Satiate all of your hunger using the Bulb of Absorption…without eating once.",
+      "advancements.chlorophyll_champion.title": "Chlorophyll Champion",
+      "advancements.scared_the_devil_himself.title": "Scared The Devil Himself",
+      "advancements.scared_the_devil_himself.descr": "Inflict Terror on a Warden with the Sinister Glove.",
+      "advancements.and_when_you_hit_the_jackpot.descr": "Get 10x drops from a mob with the Regal Amulet (10% chance on activation).",
+      "advancements.and_when_you_hit_the_jackpot.title": "And when you hit the jackpot...",
+      "advancements.a_fresh_start.title": "Stop Hitting Yourself",
+      "advancements.a_fresh_start.descr": "\"Pacify\" an Iron Golem with the Hypnotic Pendant.",
+      "death.attack.splash_damage": "%1$s was splashed to death",
+      "death.attack.splash_damage.item": "%1$s was splashed to death by %2$s using %3$s",
+      "death.attack.splash_damage.player": "%1$s was splashed to death whilst trying to escape %2$s"
+    }
+  },
+  "metadata": {
+    "files": [
+      "src/main/java/net/mcreator/pokerelics/init/PokerelicsModHumanoidModels.java",
+      "src/main/java/net/mcreator/pokerelics/init/PokerelicsModKeyMappings.java",
+      "src/main/resources/data/neoforge/loot_modifiers/global_loot_modifiers.json",
+      "src/main/java/net/mcreator/pokerelics/init/PokerelicsModParticleTypes.java",
+      "src/main/java/net/mcreator/pokerelics/init/PokerelicsModParticles.java",
+      "src/main/java/net/mcreator/pokerelics/init/PokerelicsModMobEffects.java",
+      "src/main/java/net/mcreator/pokerelics/init/PokerelicsModTrades.java",
+      "src/main/java/net/mcreator/pokerelics/init/PokerelicsModBlocks.java",
+      "src/main/java/net/mcreator/pokerelics/init/PokerelicsModItems.java",
+      "src/main/java/net/mcreator/pokerelics/init/PokerelicsModEntityRenderers.java",
+      "src/main/java/net/mcreator/pokerelics/init/PokerelicsModEntities.java",
+      "src/main/java/net/mcreator/pokerelics/init/PokerelicsModTabs.java",
+      "src/main/java/net/mcreator/pokerelics/PokerelicsModPlayerAnimationAPI.java",
+      "src/main/java/net/mcreator/pokerelics/PokerelicsMod.java",
+      "src/main/java/net/mcreator/pokerelics/client/ItemArms.java",
+      "src/main/resources/META-INF/neoforge.mods.toml",
+      "src/main/java/net/mcreator/pokerelics/init/PokerelicsModModels.java",
+      "src/main/resources/pack.mcmeta",
+      "src/main/java/net/mcreator/pokerelics/mixin/ItemInHandRendererMixin.java",
+      "src/main/resources/pokerelics.mixins.json",
+      "src/main/java/net/mcreator/pokerelics/mixin/EntityRenderDispatcherMixin.java",
+      "src/main/java/net/mcreator/pokerelics/network/PokerelicsModVariables.java",
+      "src/main/java/net/mcreator/pokerelics/network/LoadPlayerAnimationMessage.java",
+      "src/main/java/net/mcreator/pokerelics/mixin/PlayerAnimationMixin.java",
+      "src/main/java/net/mcreator/pokerelics/mixin/PlayerAnimationRendererMixin.java",
+      "src/main/resources/META-INF/accesstransformer.cfg",
+      "src/main/java/net/mcreator/pokerelics/mixin/CameraAccessor.java",
+      "src/main/java/net/mcreator/pokerelics/mixin/LevelRendererMixin.java",
+      "src/main/java/net/mcreator/pokerelics/network/PlayPlayerAnimationMessage.java"
+    ]
+  },
+  "foldersRoot": {
+    "name": "~",
+    "children": [
+      {
+        "name": "LootTableModifiers",
+        "children": []
+      },
+      {
+        "name": "Rendering",
+        "children": [
+          {
+            "name": "Models",
+            "children": []
+          },
+          {
+            "name": "Procedures",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Inventory",
+        "children": []
+      },
+      {
+        "name": "Poryware",
+        "children": [
+          {
+            "name": "Magnedrone",
+            "children": []
+          },
+          {
+            "name": "Blocks",
+            "children": []
+          },
+          {
+            "name": "PointAndClik",
+            "children": []
+          },
+          {
+            "name": "Cliki",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Particles",
+        "children": []
+      },
+      {
+        "name": "Achievements",
+        "children": [
+          {
+            "name": "SecretChallenges",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Effects",
+        "children": [
+          {
+            "name": "Terror",
+            "children": []
+          },
+          {
+            "name": "Telekinesis",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Relics",
+        "children": [
+          {
+            "name": "BulbOfAbsorption",
+            "children": []
+          },
+          {
+            "name": "VigorCandle",
+            "children": []
+          },
+          {
+            "name": "ShellSprayer",
+            "children": []
+          },
+          {
+            "name": "AncientSpoon",
+            "children": []
+          },
+          {
+            "name": "SinisterGlove",
+            "children": []
+          },
+          {
+            "name": "HypnoticPendant",
+            "children": []
+          },
+          {
+            "name": "RegalAmulet",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "Commands",
+        "children": []
+      }
+    ]
+  },
+  "workspaceSettings": {
+    "modid": "pokerelics",
+    "modName": "Pokerelics!",
+    "version": "0.3.0",
+    "description": "Choose your starter relic, and let the journey begin!",
+    "author": "thetruezeraora",
+    "license": "MIT License",
+    "serverSideOnly": false,
+    "modPicture": "ancient_spoon",
+    "requiredMods": [],
+    "dependencies": [],
+    "dependants": [],
+    "mcreatorDependencies": [],
+    "currentGenerator": "neoforge-1.21.1",
+    "credits": "Created by Phoenix Studios.",
+    "modElementsPackage": "net.mcreator.pokerelics"
+  },
+  "mcreatorVersion": 202500345720
+}

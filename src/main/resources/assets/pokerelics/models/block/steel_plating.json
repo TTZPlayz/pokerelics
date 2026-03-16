@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "pokerelics:block/steel_plating",
+    "up": "pokerelics:block/steel_plating",
+    "north": "pokerelics:block/steel_plating",
+    "east": "pokerelics:block/steel_plating",
+    "south": "pokerelics:block/steel_plating",
+    "west": "pokerelics:block/steel_plating",
+    "particle": "pokerelics:block/steel_plating"
+  },
+  "render_type": "solid"
+}

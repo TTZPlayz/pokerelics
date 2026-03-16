@@ -1,0 +1,26 @@
+{
+  "display": {
+    "background": "pokerelics:textures/screens/steel_plating.png",
+    "icon": {
+      "id": "pokerelics:ancient_spoon"
+    },
+    "title": {
+      "translate": "advancements.welcome_to_pokerelics.title"
+    },
+    "description": {
+      "translate": "advancements.welcome_to_pokerelics.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "welcome_to_pokerelics_0": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "minecraft:overworld"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "_fv": 79,
+  "_type": "humanoidmodel",
+  "definition": {
+    "modelName": "ShellSprayer",
+    "helmetModelPart": "Empty",
+    "bodyModelPart": "Empty",
+    "armsModelPartL": "Empty",
+    "armsModelPartR": "group",
+    "leggingsModelPartL": "Empty",
+    "leggingsModelPartR": "Empty"
+  }
+}

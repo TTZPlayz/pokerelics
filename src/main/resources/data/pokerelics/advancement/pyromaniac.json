@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "pokerelics:vigor_candle"
+    },
+    "title": {
+      "translate": "advancements.pyromaniac.title"
+    },
+    "description": {
+      "translate": "advancements.pyromaniac.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "pyromaniac_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "pokerelics:playing_with_fire"
+}

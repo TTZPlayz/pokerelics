@@ -1,0 +1,13 @@
+{
+  "_fv": 79,
+  "_type": "humanoidmodel",
+  "definition": {
+    "modelName": "RegalAmulet",
+    "helmetModelPart": "Empty",
+    "bodyModelPart": "bone",
+    "armsModelPartL": "Empty",
+    "armsModelPartR": "Empty",
+    "leggingsModelPartL": "Empty",
+    "leggingsModelPartR": "Empty"
+  }
+}

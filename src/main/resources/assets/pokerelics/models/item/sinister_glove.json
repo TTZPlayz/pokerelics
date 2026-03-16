@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "pokerelics:item/sinister_glove"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "pokerelics:sinister_glove_active": 1
+      },
+      "model": "pokerelics:item/sinister_glove_0"
+    }
+  ]
+}

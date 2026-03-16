@@ -1,0 +1,38 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "item/generated",
+    "textures": {
+      "layer0": "pokerelics:item/absorb_bulb"
+    }
+  },
+  "perspectives": {
+    "gui": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "pokerelics:item/absorb_bulb"
+      }
+    },
+    "fixed": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "pokerelics:item/absorb_bulb"
+      }
+    },
+    "ground": {
+      "parent": "item/generated",
+      "textures": {
+        "layer0": "pokerelics:item/absorb_bulb"
+      }
+    }
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "pokerelics:bulb_of_absorption_activated": 1
+      },
+      "model": "pokerelics:item/bulb_of_absorption_0"
+    }
+  ]
+}

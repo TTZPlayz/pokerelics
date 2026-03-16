@@ -1,0 +1,11 @@
+{
+  "entries": [
+    "pokerelics:jungle_temple",
+    "pokerelics:nether_fortress",
+    "pokerelics:ocean_ruins",
+    "pokerelics:ancient_city",
+    "pokerelics:woodland_mansion",
+    "pokerelics:piglin_bartering"
+  ],
+  "replace": false
+}

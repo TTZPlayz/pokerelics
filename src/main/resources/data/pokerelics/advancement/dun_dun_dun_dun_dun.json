@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "pokerelics:mechanical_scrap"
+    },
+    "title": {
+      "translate": "advancements.dun_dun_dun_dun_dun.title"
+    },
+    "description": {
+      "translate": "advancements.dun_dun_dun_dun_dun.descr"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "dun_dun_dun_dun_dun_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "pokerelics:i_choose_you"
+}

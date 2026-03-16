@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "pokerelics:item/vigor_candle_unlit"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "pokerelics:vigor_candle_activation_timer": 1
+      },
+      "model": "pokerelics:item/vigor_candle_0"
+    }
+  ]
+}

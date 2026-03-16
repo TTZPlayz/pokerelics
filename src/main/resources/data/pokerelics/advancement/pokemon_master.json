@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "pokerelics:point_and_clik"
+    },
+    "title": {
+      "translate": "advancements.pokemon_master.title"
+    },
+    "description": {
+      "translate": "advancements.pokemon_master.descr"
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "pokemon_master_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "pokerelics:welcome_to_pokerelics"
+}

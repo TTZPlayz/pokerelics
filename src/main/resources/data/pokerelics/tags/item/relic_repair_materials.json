@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:magma_cream",
+    "minecraft:turtle_scute",
+    "pokerelics:mechanical_scrap",
+    "minecraft:spore_blossom",
+    "minecraft:gold_nugget",
+    "minecraft:experience_bottle",
+    "minecraft:phantom_membrane",
+    "minecraft:iron_nugget"
+  ]
+}
