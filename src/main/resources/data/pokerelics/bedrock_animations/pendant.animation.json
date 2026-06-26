@@ -1,0 +1,33 @@
+{
+	"format_version": "1.8.0",
+	"animations": {
+		"animation.model.pendant_right": {
+			"loop": true,
+			"animation_length": 0.25,
+			"bones": {
+				"right_arm": {
+					"rotation": [-147.5, 0, 0]
+				},
+				"right_item": {
+					"rotation": [0, -55, 90],
+					"position": [0, 4, 7]
+				}
+			}
+		},
+		"animation.model.pendant_left": {
+			"loop": true,
+			"bones": {
+				"right_item": {
+					"rotation": [0, 0, 0]
+				},
+				"left_arm": {
+					"rotation": [-147.5, 0, 0]
+				},
+				"left_item": {
+					"rotation": [0, -55, 90],
+					"position": [0, 4, 7]
+				}
+			}
+		}
+	}
+}

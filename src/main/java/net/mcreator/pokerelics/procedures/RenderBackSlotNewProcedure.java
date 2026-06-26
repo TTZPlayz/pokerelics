@@ -8,11 +8,13 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.bus.api.Event;
 import net.neoforged.api.distmarker.Dist;
 
+import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.util.Mth;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.client.renderer.entity.LivingEntityRenderer;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.player.AbstractClientPlayer;
@@ -139,7 +141,7 @@ public class RenderBackSlotNewProcedure {
 				}
 			}
 			if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getItem() == PokerelicsModItems.VIGOR_CANDLE.get()) {
-				if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).candle_activation_timer > 0) {
+				if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("activation_timer") > 0) {
 					{
 						ResourceLocation texture = PokerelicsModVariables.candle_texture_lit;
 						renderHumanoid(playerRenderEvent, PokerelicsModHumanoidModels.CANDLE_MODEL, playerRenderEvent.getMultiBufferSource().getBuffer(RenderType.armorCutoutNoCull(texture)));
@@ -152,74 +154,34 @@ public class RenderBackSlotNewProcedure {
 				}
 			}
 			if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getItem() == PokerelicsModItems.SHELL_SPRAYER.get()) {
-				if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).texture_timer < 1) {
+				if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("fill_level") == 0) {
 					{
-						ResourceLocation texture = PokerelicsModVariables.sprayer_full_1;
-						renderHumanoid(playerRenderEvent, PokerelicsModHumanoidModels.SPRAYER_MODEL, playerRenderEvent.getMultiBufferSource().getBuffer(RenderType.armorCutoutNoCull(texture)));
+						ResourceLocation texture = (ResourceLocation
+								.parse((("pokerelics:textures/entities/shell_sprayer_model_" + new java.text.DecimalFormat("##").format(Math.round(entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).texture_timer))) + ".png")));
+						renderHumanoid(playerRenderEvent, PokerelicsModHumanoidModels.SPRAYER_MODEL_EMPTY, playerRenderEvent.getMultiBufferSource().getBuffer(RenderType.armorCutoutNoCull(texture)));
 					}
-				} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).texture_timer < 2) {
+				} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("fill_level") < 3) {
 					{
-						ResourceLocation texture = PokerelicsModVariables.sprayer_full_2;
-						renderHumanoid(playerRenderEvent, PokerelicsModHumanoidModels.SPRAYER_MODEL, playerRenderEvent.getMultiBufferSource().getBuffer(RenderType.armorCutoutNoCull(texture)));
+						ResourceLocation texture = (ResourceLocation
+								.parse((("pokerelics:textures/entities/shell_sprayer_model_" + new java.text.DecimalFormat("##").format(Math.round(entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).texture_timer))) + ".png")));
+						renderHumanoid(playerRenderEvent, PokerelicsModHumanoidModels.SPRAYER_MODEL_1, playerRenderEvent.getMultiBufferSource().getBuffer(RenderType.armorCutoutNoCull(texture)));
 					}
-				} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).texture_timer < 3) {
+				} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("fill_level") < 6) {
 					{
-						ResourceLocation texture = PokerelicsModVariables.sprayer_full_3;
-						renderHumanoid(playerRenderEvent, PokerelicsModHumanoidModels.SPRAYER_MODEL, playerRenderEvent.getMultiBufferSource().getBuffer(RenderType.armorCutoutNoCull(texture)));
+						ResourceLocation texture = (ResourceLocation
+								.parse((("pokerelics:textures/entities/shell_sprayer_model_" + new java.text.DecimalFormat("##").format(Math.round(entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).texture_timer))) + ".png")));
+						renderHumanoid(playerRenderEvent, PokerelicsModHumanoidModels.SPRAYER_MODEL_2, playerRenderEvent.getMultiBufferSource().getBuffer(RenderType.armorCutoutNoCull(texture)));
 					}
-				} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).texture_timer < 4) {
+				} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("fill_level") < 9) {
 					{
-						ResourceLocation texture = PokerelicsModVariables.sprayer_full_4;
-						renderHumanoid(playerRenderEvent, PokerelicsModHumanoidModels.SPRAYER_MODEL, playerRenderEvent.getMultiBufferSource().getBuffer(RenderType.armorCutoutNoCull(texture)));
+						ResourceLocation texture = (ResourceLocation
+								.parse((("pokerelics:textures/entities/shell_sprayer_model_" + new java.text.DecimalFormat("##").format(Math.round(entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).texture_timer))) + ".png")));
+						renderHumanoid(playerRenderEvent, PokerelicsModHumanoidModels.SPRAYER_MODEL_3, playerRenderEvent.getMultiBufferSource().getBuffer(RenderType.armorCutoutNoCull(texture)));
 					}
-				} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).texture_timer < 5) {
+				} else {
 					{
-						ResourceLocation texture = PokerelicsModVariables.sprayer_full_5;
-						renderHumanoid(playerRenderEvent, PokerelicsModHumanoidModels.SPRAYER_MODEL, playerRenderEvent.getMultiBufferSource().getBuffer(RenderType.armorCutoutNoCull(texture)));
-					}
-				} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).texture_timer < 6) {
-					{
-						ResourceLocation texture = PokerelicsModVariables.sprayer_full_6;
-						renderHumanoid(playerRenderEvent, PokerelicsModHumanoidModels.SPRAYER_MODEL, playerRenderEvent.getMultiBufferSource().getBuffer(RenderType.armorCutoutNoCull(texture)));
-					}
-				} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).texture_timer < 7) {
-					{
-						ResourceLocation texture = PokerelicsModVariables.sprayer_full_7;
-						renderHumanoid(playerRenderEvent, PokerelicsModHumanoidModels.SPRAYER_MODEL, playerRenderEvent.getMultiBufferSource().getBuffer(RenderType.armorCutoutNoCull(texture)));
-					}
-				} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).texture_timer < 8) {
-					{
-						ResourceLocation texture = PokerelicsModVariables.sprayer_full_8;
-						renderHumanoid(playerRenderEvent, PokerelicsModHumanoidModels.SPRAYER_MODEL, playerRenderEvent.getMultiBufferSource().getBuffer(RenderType.armorCutoutNoCull(texture)));
-					}
-				} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).texture_timer < 9) {
-					{
-						ResourceLocation texture = PokerelicsModVariables.sprayer_full_9;
-						renderHumanoid(playerRenderEvent, PokerelicsModHumanoidModels.SPRAYER_MODEL, playerRenderEvent.getMultiBufferSource().getBuffer(RenderType.armorCutoutNoCull(texture)));
-					}
-				} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).texture_timer < 10) {
-					{
-						ResourceLocation texture = PokerelicsModVariables.sprayer_full_10;
-						renderHumanoid(playerRenderEvent, PokerelicsModHumanoidModels.SPRAYER_MODEL, playerRenderEvent.getMultiBufferSource().getBuffer(RenderType.armorCutoutNoCull(texture)));
-					}
-				} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).texture_timer < 11) {
-					{
-						ResourceLocation texture = PokerelicsModVariables.sprayer_full_11;
-						renderHumanoid(playerRenderEvent, PokerelicsModHumanoidModels.SPRAYER_MODEL, playerRenderEvent.getMultiBufferSource().getBuffer(RenderType.armorCutoutNoCull(texture)));
-					}
-				} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).texture_timer < 12) {
-					{
-						ResourceLocation texture = PokerelicsModVariables.sprayer_full_12;
-						renderHumanoid(playerRenderEvent, PokerelicsModHumanoidModels.SPRAYER_MODEL, playerRenderEvent.getMultiBufferSource().getBuffer(RenderType.armorCutoutNoCull(texture)));
-					}
-				} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).texture_timer < 13) {
-					{
-						ResourceLocation texture = PokerelicsModVariables.sprayer_full_13;
-						renderHumanoid(playerRenderEvent, PokerelicsModHumanoidModels.SPRAYER_MODEL, playerRenderEvent.getMultiBufferSource().getBuffer(RenderType.armorCutoutNoCull(texture)));
-					}
-				} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).texture_timer < 14) {
-					{
-						ResourceLocation texture = PokerelicsModVariables.sprayer_full_14;
+						ResourceLocation texture = (ResourceLocation
+								.parse((("pokerelics:textures/entities/shell_sprayer_model_" + new java.text.DecimalFormat("##").format(Math.round(entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).texture_timer))) + ".png")));
 						renderHumanoid(playerRenderEvent, PokerelicsModHumanoidModels.SPRAYER_MODEL, playerRenderEvent.getMultiBufferSource().getBuffer(RenderType.armorCutoutNoCull(texture)));
 					}
 				}
@@ -234,6 +196,12 @@ public class RenderBackSlotNewProcedure {
 				{
 					ResourceLocation texture = PokerelicsModVariables.sinister_glove;
 					renderHumanoid(playerRenderEvent, PokerelicsModHumanoidModels.GLOVE_MODEL, playerRenderEvent.getMultiBufferSource().getBuffer(RenderType.armorCutoutNoCull(texture)));
+				}
+			}
+			if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getItem() == PokerelicsModItems.LUCKY_EGG.get()) {
+				{
+					ResourceLocation texture = PokerelicsModVariables.lucky_egg;
+					renderHumanoid(playerRenderEvent, PokerelicsModHumanoidModels.EGG_MODEL, playerRenderEvent.getMultiBufferSource().getBuffer(RenderType.armorCutoutNoCull(texture)));
 				}
 			}
 		}

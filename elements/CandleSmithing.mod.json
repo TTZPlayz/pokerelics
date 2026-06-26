@@ -1,0 +1,33 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "relics",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:CinderWax"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "Blocks.CANDLE"
+    },
+    "smithingInputAdditionStack": {
+      "value": "TAG:c:strings"
+    },
+    "smithingInputTemplateStack": {
+      "value": "CUSTOM:CinderWax"
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:VigorCandle"
+    },
+    "name": "candle_smithing",
+    "namespace": "mod"
+  }
+}

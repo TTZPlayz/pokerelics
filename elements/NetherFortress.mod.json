@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "lootmodifier",
   "definition": {
-    "modifiedTable": "chests/nether_fortress",
-    "modifierTable": "CandleLootTable"
+    "modifiedTable": "chests/nether_bridge",
+    "modifierTable": "CinderWaxLootTable"
   }
 }

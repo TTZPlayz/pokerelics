@@ -2,7 +2,7 @@
   "_fv": 79,
   "_type": "lootmodifier",
   "definition": {
-    "modifiedTable": "chests/ocean_ruins",
-    "modifierTable": "SprayerLootTable"
+    "modifiedTable": "chests/underwater_ruins",
+    "modifierTable": "ShellFragmentsLootTable"
   }
 }

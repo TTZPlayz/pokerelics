@@ -3,6 +3,6 @@
   "_type": "lootmodifier",
   "definition": {
     "modifiedTable": "chests/jungle_temple",
-    "modifierTable": "BulbLootTable"
+    "modifierTable": "ElderSeedLootTable"
   }
 }

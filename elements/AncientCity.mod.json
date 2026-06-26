@@ -3,6 +3,6 @@
   "_type": "lootmodifier",
   "definition": {
     "modifiedTable": "chests/ancient_city",
-    "modifierTable": "SpoonLootTable"
+    "modifierTable": "AncientSpoonLootTable"
   }
 }

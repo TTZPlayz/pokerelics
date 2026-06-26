@@ -8,6 +8,7 @@ import net.neoforged.bus.api.Event;
 import net.minecraft.world.phys.Vec3;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.entity.monster.warden.Warden;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
@@ -17,11 +18,14 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.AdvancementHolder;
 
 import net.mcreator.pokerelics.network.PokerelicsModVariables;
+import net.mcreator.pokerelics.init.PokerelicsModParticleTypes;
 import net.mcreator.pokerelics.init.PokerelicsModMobEffects;
 import net.mcreator.pokerelics.init.PokerelicsModItems;
 
@@ -45,15 +49,15 @@ public class ActivateSinisterGloveProcedure {
 			return;
 		double dot = 0;
 		if (sourceentity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getItem() == PokerelicsModItems.SINISTER_GLOVE.get()) {
-			if (dot == 0) {
+			if (sourceentity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("activation_cooldown") == 0) {
 				Vec3 mobLook = entity.getLookAngle();
 				Vec3 toPlayer = sourceentity.position().subtract(entity.position()).normalize();
 				dot = mobLook.dot(toPlayer);
 				if (dot <= -0.5) {
 					{
-						PokerelicsModVariables.PlayerVariables _vars = sourceentity.getData(PokerelicsModVariables.PLAYER_VARIABLES);
-						_vars.glove_activation_cooldown = 100;
-						_vars.markSyncDirty();
+						final String _tagName = "activation_cooldown";
+						final double _tagValue = PokerelicsModVariables.max_glove_cooldown;
+						CustomData.update(DataComponents.CUSTOM_DATA, sourceentity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot, tag -> tag.putDouble(_tagName, _tagValue));
 					}
 					if (world instanceof Level _level) {
 						if (!_level.isClientSide()) {
@@ -64,6 +68,8 @@ public class ActivateSinisterGloveProcedure {
 					}
 					if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 						_entity.addEffect(new MobEffectInstance(PokerelicsModMobEffects.TERROR, 100, 1));
+					if (world instanceof ServerLevel _level)
+						_level.sendParticles((SimpleParticleType) (PokerelicsModParticleTypes.SINISTER_PARTICLE.get()), x, (y + 1.5), z, 10, 0.5, 0.5, 0.5, 0.1);
 					if (world instanceof ServerLevel _level) {
 						sourceentity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.hurtAndBreak(1, _level, null, _stkprov -> {
 						});

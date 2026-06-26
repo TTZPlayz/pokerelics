@@ -1,0 +1,8 @@
+{
+  "_fv": 79,
+  "_type": "lootmodifier",
+  "definition": {
+    "modifiedTable": "chests/stronghold_library",
+    "modifierTable": "DraconicPearlLootTable"
+  }
+}

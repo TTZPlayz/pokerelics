@@ -8,16 +8,20 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.api.distmarker.Dist;
 
+import net.mcreator.pokerelics.client.particle.VigorFlameParticle;
 import net.mcreator.pokerelics.client.particle.TelekinesisParticleParticle;
-import net.mcreator.pokerelics.client.particle.TelekinesisParticle3Particle;
-import net.mcreator.pokerelics.client.particle.TelekinesisParticle2Particle;
+import net.mcreator.pokerelics.client.particle.SinisterParticleParticle;
+import net.mcreator.pokerelics.client.particle.RegalSparkleParticle;
+import net.mcreator.pokerelics.client.particle.AbsorbLeafParticle;
 
 @EventBusSubscriber(Dist.CLIENT)
 public class PokerelicsModParticles {
 	@SubscribeEvent
 	public static void registerParticles(RegisterParticleProvidersEvent event) {
 		event.registerSpriteSet(PokerelicsModParticleTypes.TELEKINESIS_PARTICLE.get(), TelekinesisParticleParticle::provider);
-		event.registerSpriteSet(PokerelicsModParticleTypes.TELEKINESIS_PARTICLE_2.get(), TelekinesisParticle2Particle::provider);
-		event.registerSpriteSet(PokerelicsModParticleTypes.TELEKINESIS_PARTICLE_3.get(), TelekinesisParticle3Particle::provider);
+		event.registerSpriteSet(PokerelicsModParticleTypes.VIGOR_FLAME.get(), VigorFlameParticle::provider);
+		event.registerSpriteSet(PokerelicsModParticleTypes.REGAL_SPARKLE.get(), RegalSparkleParticle::provider);
+		event.registerSpriteSet(PokerelicsModParticleTypes.ABSORB_LEAF.get(), AbsorbLeafParticle::provider);
+		event.registerSpriteSet(PokerelicsModParticleTypes.SINISTER_PARTICLE.get(), SinisterParticleParticle::provider);
 	}
 }

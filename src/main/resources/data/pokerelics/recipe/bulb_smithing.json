@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "pokerelics:elder_seed"
+  },
+  "base": {
+    "item": "minecraft:big_dripleaf"
+  },
+  "addition": {
+    "item": "minecraft:bone_meal"
+  },
+  "result": {
+    "id": "pokerelics:bulb_of_absorption"
+  }
+}

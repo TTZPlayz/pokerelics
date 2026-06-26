@@ -14,7 +14,7 @@
     "states": [
       {
         "renderType": 0,
-        "texture": "hypnotic_pendant",
+        "texture": "hypnotic_pendant_activated",
         "customModelName": "Normal",
         "stateMap": [
           {
@@ -31,7 +31,7 @@
     ],
     "animations": [],
     "name": "Hypnotic Pendant",
-    "rarity": "RARE",
+    "rarity": "UNCOMMON",
     "creativeTabs": [
       {
         "value": "CUSTOM:Pokerelics"
@@ -39,14 +39,14 @@
     ],
     "stackSize": 1,
     "enchantability": 0,
-    "useDuration": 0,
+    "useDuration": 100,
     "toolType": 1.0,
     "damageCount": 32,
     "recipeRemainder": {
       "value": ""
     },
     "destroyAnyBlock": false,
-    "immuneToFire": true,
+    "immuneToFire": false,
     "isPiglinCurrency": false,
     "stayInGridWhenCrafting": false,
     "damageOnCrafting": false,
@@ -56,12 +56,25 @@
       "fixedValue": []
     },
     "glowCondition": {
-      "fixedValue": false
+      "fixedValue": false,
+      "name": "RelicGlowingEffect"
     },
     "inventorySize": 9,
     "inventoryStackSize": 99,
     "onRightClickedInAir": {
-      "name": "HypnoticPendantRightclicked"
+      "name": "HypnoticPendantActivate"
+    },
+    "onItemInInventoryTick": {
+      "name": "AutoAttuneProcedure"
+    },
+    "onStoppedUsing": {
+      "name": "HypnoticPendantOnPlayerStoppedUsing"
+    },
+    "onFinishUsingItem": {
+      "name": "HypnoticPendantEffect"
+    },
+    "everyTickWhileUsing": {
+      "name": "HypnoticPendantEveryTickWhileUsingItem"
     },
     "enableRanged": false,
     "shootConstantly": false,

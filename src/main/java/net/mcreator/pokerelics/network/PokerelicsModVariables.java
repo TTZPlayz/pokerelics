@@ -52,6 +52,15 @@ public class PokerelicsModVariables {
 	public static ResourceLocation sprayer_full_14 = null;
 	public static ResourceLocation regal_amulet = null;
 	public static ResourceLocation sinister_glove = null;
+	public static ResourceLocation lucky_egg = null;
+	public static double max_amulet_cooldown = 300.0;
+	public static double max_glove_cooldown = 100.0;
+	public static double amulet_activation_chance = 0.1;
+	public static double max_bulb_cooldown = 400.0;
+	public static double max_quiver_storage = 64.0;
+	public static double blaze_damage = 3.0;
+	public static double quiver_base_damage = 3.0;
+	public static double attuned_death_damage = 5.0;
 
 	@SubscribeEvent
 	public static void init(FMLCommonSetupEvent event) {
@@ -102,32 +111,16 @@ public class PokerelicsModVariables {
 		PlayerVariables clone = new PlayerVariables();
 		clone.backSlot = original.backSlot;
 		clone.lastBackSlot = original.lastBackSlot;
-		clone.spoon_ticks_used = original.spoon_ticks_used;
-		clone.has_candle = original.has_candle;
-		clone.has_bulb = original.has_bulb;
-		clone.has_sprayer = original.has_sprayer;
-		clone.has_spoon = original.has_spoon;
-		clone.has_glove = original.has_glove;
-		clone.has_amulet = original.has_amulet;
-		clone.has_pendant = original.has_pendant;
-		clone.has_repaired_relic = original.has_repaired_relic;
 		clone.chlorophyll_streak = original.chlorophyll_streak;
+		clone.attuned_item = original.attuned_item;
+		clone.firestreak_chance = original.firestreak_chance;
+		clone.sent_already = original.sent_already;
+		clone.has_first_relic = original.has_first_relic;
 		if (!event.isWasDeath()) {
-			clone.heal_counter = original.heal_counter;
-			clone.marked_by_spoon = original.marked_by_spoon;
 			clone.is_relic_active = original.is_relic_active;
-			clone.candle_activation_timer = original.candle_activation_timer;
-			clone.time_since_heal = original.time_since_heal;
-			clone.spoon_time = original.spoon_time;
-			clone.fill_level = original.fill_level;
-			clone.time_since_spray = original.time_since_spray;
-			clone.spoon_active = original.spoon_active;
-			clone.point_and_clik_cooldown = original.point_and_clik_cooldown;
 			clone.texture_timer = original.texture_timer;
-			clone.glove_active = original.glove_active;
-			clone.glove_activation_cooldown = original.glove_activation_cooldown;
-			clone.amulet_activation_cooldown = original.amulet_activation_cooldown;
 			clone.firestreak_counter = original.firestreak_counter;
+			clone.chosen_relic = original.chosen_relic;
 		}
 		event.getEntity().setData(PLAYER_VARIABLES, clone);
 	}
@@ -135,95 +128,47 @@ public class PokerelicsModVariables {
 	public static class PlayerVariables implements INBTSerializable<CompoundTag> {
 		boolean _syncDirty = false;
 		public ItemStack backSlot = ItemStack.EMPTY;
-		public double heal_counter = 0;
-		public boolean marked_by_spoon = false;
 		public boolean is_relic_active = false;
-		public double candle_activation_timer = 0;
-		public double time_since_heal = 0;
 		public ItemStack lastBackSlot = ItemStack.EMPTY;
-		public double spoon_time = 0;
-		public double spoon_ticks_used = 0;
-		public double fill_level = 0;
-		public double time_since_spray = 0;
-		public boolean spoon_active = false;
-		public double point_and_clik_cooldown = 0;
-		public double texture_timer = 0;
-		public boolean glove_active = false;
-		public double glove_activation_cooldown = 0;
-		public double amulet_activation_cooldown = 0;
-		public boolean has_candle = false;
-		public boolean has_bulb = false;
-		public boolean has_sprayer = false;
-		public boolean has_spoon = false;
-		public boolean has_glove = false;
-		public boolean has_amulet = false;
-		public boolean has_pendant = false;
-		public boolean has_repaired_relic = false;
+		public double texture_timer = 0.5;
 		public double firestreak_counter = 0;
-		public double chlorophyll_streak = 0;
+		public double chlorophyll_streak = 0.0;
+		public ItemStack attuned_item = ItemStack.EMPTY;
+		public ItemStack chosen_relic = ItemStack.EMPTY;
+		public double firestreak_chance = 0.2;
+		public boolean sent_already = false;
+		public boolean has_first_relic = false;
 
 		@Override
 		public CompoundTag serializeNBT(HolderLookup.Provider lookupProvider) {
 			CompoundTag nbt = new CompoundTag();
 			nbt.put("backSlot", backSlot.saveOptional(lookupProvider));
-			nbt.putDouble("heal_counter", heal_counter);
-			nbt.putBoolean("marked_by_spoon", marked_by_spoon);
 			nbt.putBoolean("is_relic_active", is_relic_active);
-			nbt.putDouble("candle_activation_timer", candle_activation_timer);
-			nbt.putDouble("time_since_heal", time_since_heal);
 			nbt.put("lastBackSlot", lastBackSlot.saveOptional(lookupProvider));
-			nbt.putDouble("spoon_time", spoon_time);
-			nbt.putDouble("spoon_ticks_used", spoon_ticks_used);
-			nbt.putDouble("fill_level", fill_level);
-			nbt.putDouble("time_since_spray", time_since_spray);
-			nbt.putBoolean("spoon_active", spoon_active);
-			nbt.putDouble("point_and_clik_cooldown", point_and_clik_cooldown);
 			nbt.putDouble("texture_timer", texture_timer);
-			nbt.putBoolean("glove_active", glove_active);
-			nbt.putDouble("glove_activation_cooldown", glove_activation_cooldown);
-			nbt.putDouble("amulet_activation_cooldown", amulet_activation_cooldown);
-			nbt.putBoolean("has_candle", has_candle);
-			nbt.putBoolean("has_bulb", has_bulb);
-			nbt.putBoolean("has_sprayer", has_sprayer);
-			nbt.putBoolean("has_spoon", has_spoon);
-			nbt.putBoolean("has_glove", has_glove);
-			nbt.putBoolean("has_amulet", has_amulet);
-			nbt.putBoolean("has_pendant", has_pendant);
-			nbt.putBoolean("has_repaired_relic", has_repaired_relic);
 			nbt.putDouble("firestreak_counter", firestreak_counter);
 			nbt.putDouble("chlorophyll_streak", chlorophyll_streak);
+			nbt.put("attuned_item", attuned_item.saveOptional(lookupProvider));
+			nbt.put("chosen_relic", chosen_relic.saveOptional(lookupProvider));
+			nbt.putDouble("firestreak_chance", firestreak_chance);
+			nbt.putBoolean("sent_already", sent_already);
+			nbt.putBoolean("has_first_relic", has_first_relic);
 			return nbt;
 		}
 
 		@Override
 		public void deserializeNBT(HolderLookup.Provider lookupProvider, CompoundTag nbt) {
 			backSlot = ItemStack.parseOptional(lookupProvider, nbt.getCompound("backSlot"));
-			heal_counter = nbt.getDouble("heal_counter");
-			marked_by_spoon = nbt.getBoolean("marked_by_spoon");
 			is_relic_active = nbt.getBoolean("is_relic_active");
-			candle_activation_timer = nbt.getDouble("candle_activation_timer");
-			time_since_heal = nbt.getDouble("time_since_heal");
 			lastBackSlot = ItemStack.parseOptional(lookupProvider, nbt.getCompound("lastBackSlot"));
-			spoon_time = nbt.getDouble("spoon_time");
-			spoon_ticks_used = nbt.getDouble("spoon_ticks_used");
-			fill_level = nbt.getDouble("fill_level");
-			time_since_spray = nbt.getDouble("time_since_spray");
-			spoon_active = nbt.getBoolean("spoon_active");
-			point_and_clik_cooldown = nbt.getDouble("point_and_clik_cooldown");
 			texture_timer = nbt.getDouble("texture_timer");
-			glove_active = nbt.getBoolean("glove_active");
-			glove_activation_cooldown = nbt.getDouble("glove_activation_cooldown");
-			amulet_activation_cooldown = nbt.getDouble("amulet_activation_cooldown");
-			has_candle = nbt.getBoolean("has_candle");
-			has_bulb = nbt.getBoolean("has_bulb");
-			has_sprayer = nbt.getBoolean("has_sprayer");
-			has_spoon = nbt.getBoolean("has_spoon");
-			has_glove = nbt.getBoolean("has_glove");
-			has_amulet = nbt.getBoolean("has_amulet");
-			has_pendant = nbt.getBoolean("has_pendant");
-			has_repaired_relic = nbt.getBoolean("has_repaired_relic");
 			firestreak_counter = nbt.getDouble("firestreak_counter");
 			chlorophyll_streak = nbt.getDouble("chlorophyll_streak");
+			attuned_item = ItemStack.parseOptional(lookupProvider, nbt.getCompound("attuned_item"));
+			chosen_relic = ItemStack.parseOptional(lookupProvider, nbt.getCompound("chosen_relic"));
+			firestreak_chance = nbt.getDouble("firestreak_chance");
+			sent_already = nbt.getBoolean("sent_already");
+			has_first_relic = nbt.getBoolean("has_first_relic");
 		}
 
 		public void markSyncDirty() {

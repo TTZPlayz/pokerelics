@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "pokerelics:shell_fragments"
+  },
+  "base": {
+    "item": "minecraft:glass_bottle"
+  },
+  "addition": {
+    "item": "minecraft:heart_of_the_sea"
+  },
+  "result": {
+    "id": "pokerelics:shell_sprayer"
+  }
+}

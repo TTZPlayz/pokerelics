@@ -3,6 +3,6 @@
   "_type": "lootmodifier",
   "definition": {
     "modifiedTable": "gameplay/piglin_bartering",
-    "modifierTable": "AmuletLootTable"
+    "modifierTable": "RegalAmuletLootTable"
   }
 }

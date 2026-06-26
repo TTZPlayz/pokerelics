@@ -200,10 +200,14 @@
       "fixedValue": []
     },
     "glowCondition": {
-      "fixedValue": false
+      "fixedValue": false,
+      "name": "RelicGlowingEffect"
     },
     "inventorySize": 9,
     "inventoryStackSize": 99,
+    "onItemInInventoryTick": {
+      "name": "AutoAttuneProcedure"
+    },
     "enableRanged": false,
     "shootConstantly": false,
     "rangedItemChargesPower": false,

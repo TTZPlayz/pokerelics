@@ -17,6 +17,7 @@ import net.neoforged.api.distmarker.Dist;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.entity.LivingEntity;
@@ -25,6 +26,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.renderer.entity.ItemRenderer;
@@ -419,20 +421,34 @@ public class BackSlotHotbarRendererProcedure {
 							rendered_already = true;
 						}
 						if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.is(ItemTags.create(ResourceLocation.parse("pokerelics:relics")))) {
-							if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getItem() == PokerelicsModItems.BULB_OF_ABSORPTION.get() && entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).time_since_heal > 0) {
-								RenderSystem.setShaderTexture(0,
-										ResourceLocation.parse(("pokerelics" + ":textures/" + ("absorb_bulb_active" + new java.text.DecimalFormat("#").format(15 - entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).time_since_heal)) + ".png")));
+							if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getItem() == PokerelicsModItems.BULB_OF_ABSORPTION.get()
+									&& entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("heal_counter") < 15
+									&& entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("heal_counter") != 0) {
+								RenderSystem
+										.setShaderTexture(0,
+												ResourceLocation
+														.parse(("pokerelics" + ":textures/"
+																+ ("absorb_bulb_active" + new java.text.DecimalFormat("#")
+																		.format(entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("heal_counter")))
+																+ ".png")));
 								renderTexture((float) (slotX + 3), (float) (slotY + 3), 0, 0, 1, 255 << 24 | 255 << 16 | 255 << 8 | 255, 0);
-							} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getItem() == PokerelicsModItems.VIGOR_CANDLE.get() && entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).candle_activation_timer > 0) {
+							} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getItem() == PokerelicsModItems.VIGOR_CANDLE.get()
+									&& entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("activation_timer") > 0) {
 								RenderSystem.setShaderTexture(0, ResourceLocation.parse(("pokerelics" + ":textures/"
-										+ ("vigor_candle" + new java.text.DecimalFormat("#").format(Math.round(((entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).candle_activation_timer + 14) % 14 + 1) / 2))) + ".png")));
+										+ ("vigor_candle" + new java.text.DecimalFormat("#").format(
+												Math.round(((entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("activation_timer") + 14) % 14 + 1) / 2)))
+										+ ".png")));
 								renderTexture((float) (slotX + 3), (float) (slotY + 3), 0, 0, 1, 255 << 24 | 255 << 16 | 255 << 8 | 255, 0);
 							} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getItem() == PokerelicsModItems.SHELL_SPRAYER.get()) {
-								if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).fill_level < 9) {
-									RenderSystem.setShaderTexture(0, ResourceLocation
-											.parse(("pokerelics" + ":textures/" + ("shell_sprayer_filling_" + new java.text.DecimalFormat("#").format(entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).fill_level + 1)) + ".png")));
+								if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("fill_level") < 9) {
+									RenderSystem
+											.setShaderTexture(0,
+													ResourceLocation.parse(("pokerelics" + ":textures/"
+															+ ("shell_sprayer_filling_" + new java.text.DecimalFormat("#")
+																	.format(entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("fill_level") + 1))
+															+ ".png")));
 									renderTexture((float) (slotX + 3), (float) (slotY + 3), 0, 0, 1, 255 << 24 | 255 << 16 | 255 << 8 | 255, 0);
-								} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).fill_level == 9) {
+								} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("fill_level") == 9) {
 									if (GLFW.glfwGetMouseButton(Minecraft.getInstance().getWindow().getWindow(), GLFW.GLFW_MOUSE_BUTTON_RIGHT) == GLFW.GLFW_PRESS) {
 										RenderSystem.setShaderTexture(0, ResourceLocation.parse(("pokerelics" + ":textures/" + "shell_sprayer_active" + ".png")));
 										renderTexture((float) (slotX + 3), (float) (slotY + 3), 0, 0, 1, 255 << 24 | 255 << 16 | 255 << 8 | 255, 0);
@@ -440,6 +456,34 @@ public class BackSlotHotbarRendererProcedure {
 										RenderSystem.setShaderTexture(0, ResourceLocation.parse(("pokerelics" + ":textures/" + "shell_sprayer_full" + ".png")));
 										renderTexture((float) (slotX + 3), (float) (slotY + 3), 0, 0, 1, 255 << 24 | 255 << 16 | 255 << 8 | 255, 0);
 									}
+								}
+							} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getItem() == PokerelicsModItems.SINISTER_GLOVE.get() && entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot
+									.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("activation_cooldown") >= PokerelicsModVariables.max_glove_cooldown - 5) {
+								RenderSystem.setShaderTexture(0,
+										ResourceLocation.parse(("pokerelics" + ":textures/"
+												+ ("sinister_glove_activated" + new java.text.DecimalFormat("#").format(Math.round((PokerelicsModVariables.max_glove_cooldown
+														- (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("activation_cooldown") - 1)) / 2)))
+												+ ".png")));
+								renderTexture((float) (slotX + 3), (float) (slotY + 3), 0, 0, 1, 255 << 24 | 255 << 16 | 255 << 8 | 255, 0);
+							} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getItem() == PokerelicsModItems.REGAL_AMULET.get()) {
+								if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("activation_cooldown") >= PokerelicsModVariables.max_amulet_cooldown
+										- 7) {
+									RenderSystem.setShaderTexture(0,
+											ResourceLocation.parse(("pokerelics" + ":textures/"
+													+ ("regal_amulet_activated" + new java.text.DecimalFormat("#").format(Math.round((PokerelicsModVariables.max_amulet_cooldown
+															- (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("activation_cooldown") - 1)) / 2)))
+													+ ".png")));
+									renderTexture((float) (slotX + 3), (float) (slotY + 3), 0, 0, 1, 255 << 24 | 255 << 16 | 255 << 8 | 255, 0);
+								} else if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag()
+										.getDouble("activation_cooldown") >= PokerelicsModVariables.max_amulet_cooldown - 13) {
+									RenderSystem.setShaderTexture(0,
+											ResourceLocation.parse(("pokerelics" + ":textures/"
+													+ ("regal_amulet_activated" + new java.text.DecimalFormat("#").format(8 - Math.round((PokerelicsModVariables.max_amulet_cooldown
+															- (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("activation_cooldown") - 1)) / 2)))
+													+ ".png")));
+									renderTexture((float) (slotX + 3), (float) (slotY + 3), 0, 0, 1, 255 << 24 | 255 << 16 | 255 << 8 | 255, 0);
+								} else {
+									renderItem(world, entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot, (slotX + 11), (slotY + 11), 200, 0, 0, 0, 16);
 								}
 							} else {
 								renderItem(world, entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot, (slotX + 11), (slotY + 11), 200, 0, 0, 0, 16);

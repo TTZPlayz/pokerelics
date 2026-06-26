@@ -1,0 +1,15 @@
+{
+  "_fv": 79,
+  "_type": "itemextension",
+  "definition": {
+    "item": {
+      "value": "CUSTOM:ElderSeed"
+    },
+    "enableFuel": true,
+    "fuelPower": {
+      "fixedValue": 6400.0
+    },
+    "hasDispenseBehavior": false,
+    "compostLayerChance": 1.0
+  }
+}

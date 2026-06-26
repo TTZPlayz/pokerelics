@@ -25,5 +25,12 @@ public class PokerelicsModTabs {
 				tabData.accept(PokerelicsModItems.SINISTER_GLOVE.get());
 				tabData.accept(PokerelicsModItems.HYPNOTIC_PENDANT.get());
 				tabData.accept(PokerelicsModItems.REGAL_AMULET.get());
+				tabData.accept(PokerelicsModItems.ELDER_SEED.get());
+				tabData.accept(PokerelicsModItems.CINDER_WAX.get());
+				tabData.accept(PokerelicsModItems.SHELL_FRAGMENTS.get());
+				tabData.accept(PokerelicsModItems.DRACONIC_PEARL.get());
+				tabData.accept(PokerelicsModItems.WINGED_WAND.get());
+				tabData.accept(PokerelicsModItems.LUCKY_EGG.get());
+				tabData.accept(PokerelicsModItems.MULTIQUIVER.get());
 			}).build());
 }

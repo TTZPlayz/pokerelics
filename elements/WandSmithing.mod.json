@@ -1,0 +1,33 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "relics",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:DraconicPearl"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "Items.BREEZE_ROD"
+    },
+    "smithingInputAdditionStack": {
+      "value": "Items.FEATHER"
+    },
+    "smithingInputTemplateStack": {
+      "value": "CUSTOM:DraconicPearl"
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:WingedWand"
+    },
+    "name": "wand_smithing",
+    "namespace": "mod"
+  }
+}

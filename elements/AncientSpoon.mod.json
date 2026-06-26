@@ -4,33 +4,14 @@
   "definition": {
     "renderType": 0,
     "texture": "ancient_spoon",
-    "customModelName": "Tool",
+    "customModelName": "Normal",
     "guiTexture": "",
     "customProperties": {
-      "durability": {
-        "name": "AncientSpoonPropertyValueProvider"
-      },
       "active": {
         "name": "AncientSpoonPropertyValueProviderActive"
       }
     },
     "states": [
-      {
-        "renderType": 0,
-        "texture": "broken_ancient_spoon",
-        "customModelName": "Tool",
-        "stateMap": [
-          {
-            "property": {
-              "min": -1.7976931348623157E308,
-              "max": 1.7976931348623157E308,
-              "name": "CUSTOM:durability",
-              "type": "number"
-            },
-            "value": 255.0
-          }
-        ]
-      },
       {
         "renderType": 0,
         "texture": "ancient_spoon_activated",
@@ -58,7 +39,7 @@
     ],
     "stackSize": 1,
     "enchantability": 0,
-    "useDuration": 0,
+    "useDuration": 600,
     "toolType": 1.0,
     "damageCount": 256,
     "recipeRemainder": {
@@ -75,14 +56,24 @@
       "fixedValue": []
     },
     "glowCondition": {
-      "fixedValue": false
+      "fixedValue": false,
+      "name": "RelicGlowingEffect"
     },
     "inventorySize": 9,
     "inventoryStackSize": 99,
     "onRightClickedInAir": {
       "name": "AncientSpoonActivate"
     },
-    "onItemInUseTick": {
+    "onItemInInventoryTick": {
+      "name": "AutoAttuneProcedure"
+    },
+    "onStoppedUsing": {
+      "name": "AncientSpoonDeactivate"
+    },
+    "onFinishUsingItem": {
+      "name": "AncientSpoonDeactivate"
+    },
+    "everyTickWhileUsing": {
       "name": "AncientSpoonEffect"
     },
     "enableRanged": false,

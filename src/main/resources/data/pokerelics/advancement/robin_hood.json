@@ -1,0 +1,8 @@
+{
+  "criteria": {
+    "robin_hood_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "pokerelics:i_choose_you"
+}

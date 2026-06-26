@@ -3,7 +3,8 @@
   "package": "net.mcreator.pokerelics.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "InventoryMenuMixin"
+    "InventoryMenuMixin",
+    "EggLayingMixin"
   ],
   "client": [
     "PlayerAnimationMixin",

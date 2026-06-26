@@ -9,11 +9,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.PlayerModel;
 import net.minecraft.client.Minecraft;
 
-import net.mcreator.pokerelics.client.model.SinisterGloveModel;
-import net.mcreator.pokerelics.client.model.ShellSprayer;
-import net.mcreator.pokerelics.client.model.RegalAmulet;
-import net.mcreator.pokerelics.client.model.ModelVigor_Candle_Converted;
-import net.mcreator.pokerelics.client.model.BulbOfAbsorption;
+import net.mcreator.pokerelics.client.model.*;
 
 import java.util.Map;
 import java.util.Collections;
@@ -25,6 +21,11 @@ public class PokerelicsModHumanoidModels {
 	public static PlayerModel SPRAYER_MODEL;
 	public static PlayerModel GLOVE_MODEL;
 	public static PlayerModel AMULET_MODEL;
+	public static PlayerModel EGG_MODEL;
+	public static PlayerModel SPRAYER_MODEL_1;
+	public static PlayerModel SPRAYER_MODEL_2;
+	public static PlayerModel SPRAYER_MODEL_3;
+	public static PlayerModel SPRAYER_MODEL_EMPTY;
 
 	@SubscribeEvent
 	public static void initModels(EntityRenderersEvent.AddLayers event) {
@@ -72,6 +73,56 @@ public class PokerelicsModHumanoidModels {
 		AMULET_MODEL = new PlayerModel(new ModelPart(Collections.emptyList(),
 				Map.ofEntries(Map.entry("hat", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("head", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("body", amulet_model_temp.bone),
 						Map.entry("left_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("left_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("left_sleeve", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_sleeve", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("left_pants", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_pants", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("jacket", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("cloak", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("ear", new ModelPart(Collections.emptyList(), Collections.emptyMap())))),
+				false);
+		ModelLuckyEgg_Converted egg_model_temp = new ModelLuckyEgg_Converted(Minecraft.getInstance().getEntityModels().bakeLayer(ModelLuckyEgg_Converted.LAYER_LOCATION));
+		EGG_MODEL = new PlayerModel(new ModelPart(Collections.emptyList(),
+				Map.ofEntries(Map.entry("hat", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("head", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("body", egg_model_temp.group),
+						Map.entry("left_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("left_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("left_sleeve", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_sleeve", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("left_pants", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_pants", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("jacket", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("cloak", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("ear", new ModelPart(Collections.emptyList(), Collections.emptyMap())))),
+				false);
+		ShellSprayer_Converted_1 sprayer_model_1_temp = new ShellSprayer_Converted_1(Minecraft.getInstance().getEntityModels().bakeLayer(ShellSprayer_Converted_1.LAYER_LOCATION));
+		SPRAYER_MODEL_1 = new PlayerModel(new ModelPart(Collections.emptyList(),
+				Map.ofEntries(Map.entry("hat", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("head", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("body", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("left_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_arm", sprayer_model_1_temp.group),
+						Map.entry("left_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("left_sleeve", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_sleeve", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("left_pants", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_pants", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("jacket", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("cloak", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("ear", new ModelPart(Collections.emptyList(), Collections.emptyMap())))),
+				false);
+		ShellSprayer_Converted_2 sprayer_model_2_temp = new ShellSprayer_Converted_2(Minecraft.getInstance().getEntityModels().bakeLayer(ShellSprayer_Converted_2.LAYER_LOCATION));
+		SPRAYER_MODEL_2 = new PlayerModel(new ModelPart(Collections.emptyList(),
+				Map.ofEntries(Map.entry("hat", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("head", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("body", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("left_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_arm", sprayer_model_2_temp.group),
+						Map.entry("left_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("left_sleeve", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_sleeve", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("left_pants", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_pants", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("jacket", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("cloak", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("ear", new ModelPart(Collections.emptyList(), Collections.emptyMap())))),
+				false);
+		ShellSprayer_Converted_3 sprayer_model_3_temp = new ShellSprayer_Converted_3(Minecraft.getInstance().getEntityModels().bakeLayer(ShellSprayer_Converted_3.LAYER_LOCATION));
+		SPRAYER_MODEL_3 = new PlayerModel(new ModelPart(Collections.emptyList(),
+				Map.ofEntries(Map.entry("hat", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("head", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("body", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("left_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_arm", sprayer_model_3_temp.group),
+						Map.entry("left_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("left_sleeve", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_sleeve", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("left_pants", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_pants", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("jacket", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("cloak", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("ear", new ModelPart(Collections.emptyList(), Collections.emptyMap())))),
+				false);
+		ShellSprayer_Converted_0 sprayer_model_empty_temp = new ShellSprayer_Converted_0(Minecraft.getInstance().getEntityModels().bakeLayer(ShellSprayer_Converted_0.LAYER_LOCATION));
+		SPRAYER_MODEL_EMPTY = new PlayerModel(new ModelPart(Collections.emptyList(),
+				Map.ofEntries(Map.entry("hat", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("head", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
+						Map.entry("body", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("left_arm", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_arm", sprayer_model_empty_temp.group),
 						Map.entry("left_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_leg", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
 						Map.entry("left_sleeve", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_sleeve", new ModelPart(Collections.emptyList(), Collections.emptyMap())),
 						Map.entry("left_pants", new ModelPart(Collections.emptyList(), Collections.emptyMap())), Map.entry("right_pants", new ModelPart(Collections.emptyList(), Collections.emptyMap())),

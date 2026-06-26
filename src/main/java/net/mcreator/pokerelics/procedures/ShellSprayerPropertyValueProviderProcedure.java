@@ -1,13 +1,11 @@
 package net.mcreator.pokerelics.procedures;
 
-import net.minecraft.world.entity.Entity;
-
-import net.mcreator.pokerelics.network.PokerelicsModVariables;
+import net.minecraft.world.item.component.CustomData;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.core.component.DataComponents;
 
 public class ShellSprayerPropertyValueProviderProcedure {
-	public static double execute(Entity entity) {
-		if (entity == null)
-			return 0;
-		return entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).fill_level;
+	public static double execute(ItemStack itemstack) {
+		return itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("fill_level");
 	}
 }

@@ -6,5 +6,5 @@
       "loot_table_id": "chests/ancient_city"
     }
   ],
-  "table": "pokerelics:spoon_loot_table"
+  "table": "pokerelics:chests/ancient_spoon"
 }

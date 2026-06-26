@@ -1,0 +1,147 @@
+{
+  "_fv": 79,
+  "_type": "gui",
+  "definition": {
+    "type": 0,
+    "width": 396,
+    "height": 192,
+    "inventoryOffsetX": 0,
+    "inventoryOffsetY": 0,
+    "renderBgLayer": false,
+    "doesPauseGame": false,
+    "components": [
+      {
+        "type": "label",
+        "data": {
+          "name": "label_choose_your",
+          "text": {
+            "fixedValue": "Choose your §estarter§r Relic!"
+          },
+          "color": {
+            "value": -1,
+            "falpha": 0.0
+          },
+          "x": 132,
+          "y": 44,
+          "locked": false
+        }
+      },
+      {
+        "type": "button",
+        "data": {
+          "name": "button_begin_your_adventure",
+          "text": "§eBegin your adventure!§r",
+          "isUndecorated": true,
+          "onClick": {
+            "name": "ExitStarterRelicGUI"
+          },
+          "displayCondition": {
+            "name": "BeginAdventureDisplayCondition"
+          },
+          "width": 135,
+          "height": 20,
+          "x": 168,
+          "y": 179,
+          "locked": false
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_vigor_candle_unlit",
+          "image": "vigor_candle_unlit.png",
+          "hoveredImage": "vigor_candle_selected.png",
+          "onClick": {
+            "name": "SelectCandle"
+          },
+          "x": 186,
+          "y": 98,
+          "locked": true
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_absorb_bulb",
+          "image": "absorb_bulb.png",
+          "hoveredImage": "absorb_bulb_selected.png",
+          "onClick": {
+            "name": "SelectBulb"
+          },
+          "x": 78,
+          "y": 107,
+          "locked": true
+        }
+      },
+      {
+        "type": "imagebutton",
+        "data": {
+          "name": "imagebutton_shell_sprayer_full",
+          "image": "shell_sprayer.png",
+          "hoveredImage": "shell_sprayer_selected.png",
+          "onClick": {
+            "name": "SelectSprayer"
+          },
+          "x": 294,
+          "y": 107,
+          "locked": true
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_empty",
+          "text": {
+            "fixedValue": "Bulb of Absorption",
+            "name": "StarterRelicGUIBulbText"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 96,
+          "y": 125,
+          "locked": true
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_empty1",
+          "text": {
+            "fixedValue": "Vigor Candle",
+            "name": "StarterRelicGUICandleText"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 204,
+          "y": 125,
+          "locked": true
+        }
+      },
+      {
+        "type": "tooltip",
+        "data": {
+          "name": "tooltip_empty2",
+          "text": {
+            "fixedValue": "Shell Sprayer",
+            "name": "StarterRelicGUISprayerText"
+          },
+          "width": 24,
+          "height": 24,
+          "x": 312,
+          "y": 134,
+          "locked": true
+        }
+      }
+    ],
+    "onOpen": {
+      "name": "StarterRelicGUIThisGUIIsOpened"
+    },
+    "gridSettings": {
+      "sx": 18,
+      "sy": 18,
+      "ox": 11,
+      "oy": 15,
+      "snapOnGrid": true
+    }
+  }
+}

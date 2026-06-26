@@ -1,14 +1,12 @@
 package net.mcreator.pokerelics.procedures;
 
-import net.minecraft.world.entity.Entity;
-
-import net.mcreator.pokerelics.network.PokerelicsModVariables;
+import net.minecraft.world.item.component.CustomData;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.core.component.DataComponents;
 
 public class AncientSpoonPropertyValueProviderActiveProcedure {
-	public static double execute(Entity entity) {
-		if (entity == null)
-			return 0;
-		if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).spoon_active) {
+	public static double execute(ItemStack itemstack) {
+		if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getBoolean("spoon_active") == true) {
 			return 1;
 		}
 		return 0;

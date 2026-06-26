@@ -3,6 +3,6 @@
   "_type": "lootmodifier",
   "definition": {
     "modifiedTable": "chests/woodland_mansion",
-    "modifierTable": "GloveLootTable"
+    "modifierTable": "SinisterGloveLootTable"
   }
 }

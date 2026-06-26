@@ -7,6 +7,7 @@ import net.neoforged.bus.api.Event;
 
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.sounds.SoundSource;
@@ -14,12 +15,14 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.core.particles.SimpleParticleType;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.BlockPos;
 import net.minecraft.advancements.AdvancementProgress;
 import net.minecraft.advancements.AdvancementHolder;
 
 import net.mcreator.pokerelics.network.PokerelicsModVariables;
+import net.mcreator.pokerelics.init.PokerelicsModParticleTypes;
 import net.mcreator.pokerelics.init.PokerelicsModItems;
 
 import javax.annotation.Nullable;
@@ -40,19 +43,18 @@ public class AbsorbBulbEffectProcedure {
 			return;
 		if (entity instanceof Player) {
 			if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getItem() == PokerelicsModItems.BULB_OF_ABSORPTION.get()) {
-				if (world.canSeeSkyFromBelowWater(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ())) && world instanceof Level _lvl6 && _lvl6.isDay()) {
+				if (world.canSeeSkyFromBelowWater(BlockPos.containing(entity.getX(), entity.getY(), entity.getZ())) && world.dayTime() <= 12000) {
 					if ((entity instanceof Player _plr ? _plr.getFoodData().getFoodLevel() : 0) < 20) {
-						if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).heal_counter >= 400) {
+						if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("heal_counter") >= PokerelicsModVariables.max_bulb_cooldown) {
 							if (entity instanceof Player _player)
 								_player.getFoodData().setFoodLevel((entity instanceof Player _plr ? _plr.getFoodData().getFoodLevel() : 0) + 1);
 							{
-								PokerelicsModVariables.PlayerVariables _vars = entity.getData(PokerelicsModVariables.PLAYER_VARIABLES);
-								_vars.heal_counter = 0;
-								_vars.time_since_heal = 15;
-								_vars.markSyncDirty();
+								final String _tagName = "heal_counter";
+								final double _tagValue = 0;
+								CustomData.update(DataComponents.CUSTOM_DATA, entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot, tag -> tag.putDouble(_tagName, _tagValue));
 							}
 							if (world instanceof ServerLevel _level)
-								_level.sendParticles(ParticleTypes.COMPOSTER, x, (y + 1), z, 30, 1, 1, 1, 3);
+								_level.sendParticles((SimpleParticleType) (PokerelicsModParticleTypes.ABSORB_LEAF.get()), x, (y + 1), z, 30, 0.25, 0.25, 0.25, 0.1);
 							if (world instanceof Level _level) {
 								if (!_level.isClientSide()) {
 									_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("item.bone_meal.use")), SoundSource.NEUTRAL, 1, 1);
@@ -78,26 +80,19 @@ public class AbsorbBulbEffectProcedure {
 								}
 							}
 						}
-						if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).heal_counter < 400) {
+						if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("heal_counter") < PokerelicsModVariables.max_bulb_cooldown) {
 							{
-								PokerelicsModVariables.PlayerVariables _vars = entity.getData(PokerelicsModVariables.PLAYER_VARIABLES);
-								_vars.heal_counter = entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).heal_counter + 1;
-								_vars.markSyncDirty();
+								final String _tagName = "heal_counter";
+								final double _tagValue = (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("heal_counter") + 1);
+								CustomData.update(DataComponents.CUSTOM_DATA, entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot, tag -> tag.putDouble(_tagName, _tagValue));
 							}
 						}
 					} else if ((entity instanceof Player _plr ? _plr.getFoodData().getFoodLevel() : 0) >= 20) {
 						{
-							PokerelicsModVariables.PlayerVariables _vars = entity.getData(PokerelicsModVariables.PLAYER_VARIABLES);
-							_vars.heal_counter = 0;
-							_vars.markSyncDirty();
+							final String _tagName = "heal_counter";
+							final double _tagValue = 0;
+							CustomData.update(DataComponents.CUSTOM_DATA, entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).backSlot, tag -> tag.putDouble(_tagName, _tagValue));
 						}
-					}
-				}
-				if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).time_since_heal > 0) {
-					{
-						PokerelicsModVariables.PlayerVariables _vars = entity.getData(PokerelicsModVariables.PLAYER_VARIABLES);
-						_vars.time_since_heal = entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).time_since_heal - 1;
-						_vars.markSyncDirty();
 					}
 				}
 			}

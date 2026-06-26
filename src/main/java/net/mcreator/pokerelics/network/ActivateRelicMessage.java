@@ -51,7 +51,7 @@ public record ActivateRelicMessage(int eventType, int pressedms) implements Cust
 			return;
 		if (type == 0) {
 
-			ActivateRelicOnKeyPressedProcedure.execute(entity);
+			ActivateRelicOnKeyPressedProcedure.execute(world, x, y, z, entity);
 		}
 	}
 

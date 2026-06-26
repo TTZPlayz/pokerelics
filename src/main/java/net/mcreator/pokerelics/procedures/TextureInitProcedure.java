@@ -43,5 +43,6 @@ public class TextureInitProcedure {
 		PokerelicsModVariables.sprayer_full_14 = ResourceLocation.parse("pokerelics:textures/entities/shell_sprayer_model_14.png");
 		PokerelicsModVariables.regal_amulet = ResourceLocation.parse("pokerelics:textures/entities/regal_amulet_model.png");
 		PokerelicsModVariables.sinister_glove = ResourceLocation.parse("pokerelics:textures/entities/sinister_glove_model.png");
+		PokerelicsModVariables.lucky_egg = ResourceLocation.parse("pokerelics:textures/entities/lucky_egg_model.png");
 	}
 }

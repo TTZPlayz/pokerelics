@@ -3,8 +3,8 @@
   "conditions": [
     {
       "condition": "neoforge:loot_table_id",
-      "loot_table_id": "chests/ocean_ruins"
+      "loot_table_id": "chests/underwater_ruins"
     }
   ],
-  "table": "pokerelics:sprayer_loot_table"
+  "table": "pokerelics:chests/shell_fragments"
 }

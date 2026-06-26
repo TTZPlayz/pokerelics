@@ -1,0 +1,23 @@
+{
+  "display": {
+    "icon": {
+      "id": "pokerelics:lucky_egg"
+    },
+    "title": {
+      "translate": "advancements.eggstra_lucky.title"
+    },
+    "description": {
+      "translate": "advancements.eggstra_lucky.descr"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "criteria": {
+    "eggstra_lucky_0": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "pokerelics:i_choose_you"
+}

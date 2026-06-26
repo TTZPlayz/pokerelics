@@ -1,5 +1,7 @@
 {
   "textures": [
-    "pokerelics:telekinesis_particle"
+    "pokerelics:telekinesis_particle_1",
+    "pokerelics:telekinesis_particle_2",
+    "pokerelics:telekinesis_particle_3"
   ]
 }

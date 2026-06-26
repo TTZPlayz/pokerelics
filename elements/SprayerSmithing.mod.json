@@ -1,0 +1,33 @@
+{
+  "_fv": 79,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Smithing",
+    "recipeRetstackSize": 1,
+    "group": "relics",
+    "unlockingItems": [
+      {
+        "value": "CUSTOM:ShellFragments"
+      }
+    ],
+    "cookingBookCategory": "MISC",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "craftingBookCategory": "MISC",
+    "recipeShapeless": false,
+    "smithingInputStack": {
+      "value": "Items.GLASS_BOTTLE"
+    },
+    "smithingInputAdditionStack": {
+      "value": "Items.HEART_OF_THE_SEA"
+    },
+    "smithingInputTemplateStack": {
+      "value": "CUSTOM:ShellFragments"
+    },
+    "smithingReturnStack": {
+      "value": "CUSTOM:ShellSprayer"
+    },
+    "name": "sprayer_smithing",
+    "namespace": "mod"
+  }
+}

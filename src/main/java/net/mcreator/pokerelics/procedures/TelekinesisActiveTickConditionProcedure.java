@@ -28,11 +28,7 @@ public class TelekinesisActiveTickConditionProcedure {
 		double Strength = 0;
 		double O = 0;
 		if (world instanceof ServerLevel _level)
-			_level.sendParticles((SimpleParticleType) (PokerelicsModParticleTypes.TELEKINESIS_PARTICLE.get()), (entity.getX()), (entity.getY() + 1), (entity.getZ()), 2, 0.25, 0.25, 0.25, 0.1);
-		if (world instanceof ServerLevel _level)
-			_level.sendParticles((SimpleParticleType) (PokerelicsModParticleTypes.TELEKINESIS_PARTICLE_2.get()), (entity.getX()), (entity.getY() + 1), (entity.getZ()), 2, 0.25, 0.25, 0.25, 0.1);
-		if (world instanceof ServerLevel _level)
-			_level.sendParticles((SimpleParticleType) (PokerelicsModParticleTypes.TELEKINESIS_PARTICLE_3.get()), (entity.getX()), (entity.getY() + 1), (entity.getZ()), 2, 0.25, 0.25, 0.25, 0.1);
+			_level.sendParticles((SimpleParticleType) (PokerelicsModParticleTypes.TELEKINESIS_PARTICLE.get()), (entity.getX()), (entity.getY() + 1), (entity.getZ()), 1, 0.25, 0.25, 0.25, 0.1);
 		if ((entity instanceof LivingEntity _livEnt && _livEnt.hasEffect(MobEffects.GLOWING) ? _livEnt.getEffect(MobEffects.GLOWING).getDuration() : 0) <= 1) {
 			if (entity instanceof LivingEntity _entity && !_entity.level().isClientSide())
 				_entity.addEffect(new MobEffectInstance(MobEffects.GLOWING, 60, 1, false, false));

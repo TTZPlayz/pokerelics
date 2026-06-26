@@ -54,7 +54,7 @@ public class PokerelicsMod {
 		PokerelicsModVariables.ATTACHMENT_TYPES.register(modEventBus);
 
 		PokerelicsModMobEffects.REGISTRY.register(modEventBus);
-
+		PokerelicsModMenus.REGISTRY.register(modEventBus);
 		PokerelicsModParticleTypes.REGISTRY.register(modEventBus);
 
 		// Start of user code block mod init

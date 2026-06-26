@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "pokerelics:item/multiquiver_empty"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "pokerelics:multiquiver_arrows": 1
+      },
+      "model": "pokerelics:item/multiquiver_0"
+    }
+  ]
+}

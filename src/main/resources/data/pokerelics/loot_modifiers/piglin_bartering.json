@@ -6,5 +6,5 @@
       "loot_table_id": "gameplay/piglin_bartering"
     }
   ],
-  "table": "pokerelics:amulet_loot_table"
+  "table": "pokerelics:entities/regal_amulet"
 }

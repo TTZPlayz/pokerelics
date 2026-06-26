@@ -36,13 +36,13 @@ public class TelekinesisParticleParticle extends TextureSheetParticle {
 		this.spriteSet = spriteSet;
 		this.setSize(0.2f, 0.2f);
 		this.quadSize *= 1.5f;
-		this.lifetime = (int) Math.max(1, 7 + (this.random.nextInt(2) - 1));
+		this.lifetime = (int) Math.max(1, 60 + (this.random.nextInt(2) - 1));
 		this.gravity = 0f;
 		this.hasPhysics = false;
 		this.xd = vx * 0.1;
 		this.yd = vy * 0.1;
 		this.zd = vz * 0.1;
-		this.pickSprite(spriteSet);
+		this.setSpriteFromAge(spriteSet);
 	}
 
 	@Override
@@ -52,11 +52,14 @@ public class TelekinesisParticleParticle extends TextureSheetParticle {
 
 	@Override
 	public ParticleRenderType getRenderType() {
-		return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+		return ParticleRenderType.PARTICLE_SHEET_TRANSLUCENT;
 	}
 
 	@Override
 	public void tick() {
 		super.tick();
+		if (!this.removed) {
+			this.setSprite(this.spriteSet.get((this.age / 5) % 3 + 1, 3));
+		}
 	}
 }

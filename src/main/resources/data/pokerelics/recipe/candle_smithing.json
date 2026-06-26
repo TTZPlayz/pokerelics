@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "pokerelics:cinder_wax"
+  },
+  "base": {
+    "tag": "minecraft:candles"
+  },
+  "addition": {
+    "tag": "c:strings"
+  },
+  "result": {
+    "id": "pokerelics:vigor_candle"
+  }
+}

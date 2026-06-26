@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": {
+    "item": "pokerelics:draconic_pearl"
+  },
+  "base": {
+    "item": "minecraft:breeze_rod"
+  },
+  "addition": {
+    "item": "minecraft:feather"
+  },
+  "result": {
+    "id": "pokerelics:winged_wand"
+  }
+}

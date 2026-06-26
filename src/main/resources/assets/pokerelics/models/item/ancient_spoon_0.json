@@ -1,6 +1,6 @@
 {
   "parent": "item/handheld",
   "textures": {
-    "layer0": "pokerelics:item/broken_ancient_spoon"
+    "layer0": "pokerelics:item/ancient_spoon_activated"
   }
 }

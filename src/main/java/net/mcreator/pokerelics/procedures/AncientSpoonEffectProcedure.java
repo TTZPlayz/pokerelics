@@ -5,19 +5,18 @@ import net.minecraft.world.phys.AABB;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.item.component.CustomData;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.network.chat.Component;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.BlockPos;
 
-import net.mcreator.pokerelics.network.PokerelicsModVariables;
 import net.mcreator.pokerelics.init.PokerelicsModMobEffects;
 
 import java.util.Comparator;
@@ -45,7 +44,8 @@ public class AncientSpoonEffectProcedure {
 		double newVY = 0;
 		double newVZ = 0;
 		double totalSpeed = 0;
-		if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).spoon_active == true) {
+		boolean activated = false;
+		if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getBoolean("spoon_active") == true) {
 			if (world instanceof Level _level) {
 				if (!_level.isClientSide()) {
 					_level.playSound(null, BlockPos.containing(x, y, z), BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.beacon.ambient")), SoundSource.NEUTRAL, (float) 0.05, 1);
@@ -53,7 +53,7 @@ public class AncientSpoonEffectProcedure {
 					_level.playLocalSound(x, y, z, BuiltInRegistries.SOUND_EVENT.get(ResourceLocation.parse("block.beacon.ambient")), SoundSource.NEUTRAL, (float) 0.05, 1, false);
 				}
 			}
-			if (itemstack.getDamageValue() < 255) {
+			if (BrokenRelicMessageProcedure.execute(entity, itemstack) == false) {
 				cursorX = entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(2)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getX();
 				cursorY = entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(2)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getY();
 				cursorZ = entity.level().clip(new ClipContext(entity.getEyePosition(1f), entity.getEyePosition(1f).add(entity.getViewVector(1f).scale(2)), ClipContext.Block.OUTLINE, ClipContext.Fluid.NONE, entity)).getBlockPos().getZ();
@@ -87,32 +87,36 @@ public class AncientSpoonEffectProcedure {
 								newVZ = (newVZ / totalSpeed) * 0.7;
 							}
 							entityiterator.setDeltaMovement(new Vec3(newVX, newVY, newVZ));
-						}
-						if (entityiterator instanceof LivingEntity) {
-							if (!(entityiterator instanceof LivingEntity _livEnt15 && _livEnt15.hasEffect(PokerelicsModMobEffects.TELEKINESIS))) {
-								if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-									_entity.addEffect(new MobEffectInstance(PokerelicsModMobEffects.TELEKINESIS, 60, 1, false, false));
+							if (entityiterator instanceof LivingEntity) {
+								if (!(entityiterator instanceof LivingEntity _livEnt16 && _livEnt16.hasEffect(PokerelicsModMobEffects.TELEKINESIS))) {
+									if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+										_entity.addEffect(new MobEffectInstance(PokerelicsModMobEffects.TELEKINESIS, 20, 1, false, false));
+								}
+								if ((entityiterator instanceof LivingEntity _livEnt && _livEnt.hasEffect(PokerelicsModMobEffects.TELEKINESIS) ? _livEnt.getEffect(PokerelicsModMobEffects.TELEKINESIS).getDuration() : 0) <= 1) {
+									if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
+										_entity.addEffect(new MobEffectInstance(PokerelicsModMobEffects.TELEKINESIS, 20, 1, true, false));
+								}
 							}
-							if ((entityiterator instanceof LivingEntity _livEnt && _livEnt.hasEffect(PokerelicsModMobEffects.TELEKINESIS) ? _livEnt.getEffect(PokerelicsModMobEffects.TELEKINESIS).getDuration() : 0) <= 1) {
-								if (entityiterator instanceof LivingEntity _entity && !_entity.level().isClientSide())
-									_entity.addEffect(new MobEffectInstance(PokerelicsModMobEffects.TELEKINESIS, 60, 1, true, false));
-							}
 						}
-						{
-							PokerelicsModVariables.PlayerVariables _vars = entity.getData(PokerelicsModVariables.PLAYER_VARIABLES);
-							_vars.spoon_time = entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).spoon_time + 1;
-							_vars.markSyncDirty();
-						}
+						activated = true;
 					}
 				}
-				if (entity.getData(PokerelicsModVariables.PLAYER_VARIABLES).spoon_time == 20) {
+				if (activated == true) {
 					{
-						PokerelicsModVariables.PlayerVariables _vars = entity.getData(PokerelicsModVariables.PLAYER_VARIABLES);
-						_vars.spoon_time = 0;
-						_vars.markSyncDirty();
+						final String _tagName = "spoon_time";
+						final double _tagValue = (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("spoon_time") + 1);
+						CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putDouble(_tagName, _tagValue));
+					}
+					activated = false;
+				}
+				if (itemstack.getOrDefault(DataComponents.CUSTOM_DATA, CustomData.EMPTY).copyTag().getDouble("spoon_time") == 20) {
+					{
+						final String _tagName = "spoon_time";
+						final double _tagValue = 0;
+						CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putDouble(_tagName, _tagValue));
 					}
 					if (world instanceof ServerLevel _level) {
-						(entity instanceof LivingEntity _livEnt ? _livEnt.getMainHandItem() : ItemStack.EMPTY).hurtAndBreak(1, _level, null, _stkprov -> {
+						itemstack.hurtAndBreak(1, _level, null, _stkprov -> {
 						});
 					}
 				}
@@ -125,12 +129,10 @@ public class AncientSpoonEffectProcedure {
 				}
 			} else {
 				{
-					PokerelicsModVariables.PlayerVariables _vars = entity.getData(PokerelicsModVariables.PLAYER_VARIABLES);
-					_vars.spoon_active = false;
-					_vars.markSyncDirty();
+					final String _tagName = "spoon_active";
+					final boolean _tagValue = false;
+					CustomData.update(DataComponents.CUSTOM_DATA, itemstack, tag -> tag.putBoolean(_tagName, _tagValue));
 				}
-				if (entity instanceof Player _player && !_player.level().isClientSide())
-					_player.displayClientMessage(Component.literal("This relic is too damaged to use."), true);
 			}
 		}
 	}
